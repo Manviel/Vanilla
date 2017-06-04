@@ -12,7 +12,6 @@ class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log('Was clicked.');
     this.setState({ mounted: false });
   };
 
@@ -23,7 +22,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <CSSTransitionGroup
             transitionName="fade"
             transitionAppear={true}
@@ -32,7 +31,7 @@ class App extends Component {
             transitionLeaveTimeout={300}>
             {this.state.mounted && <Form onSubmit={this.handleSubmit} />}
           </CSSTransitionGroup>
-        </p>
+        </div>
       </div>
     );
   }
