@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 import Form from './components/Form';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class App extends Component {
   state = {
@@ -9,7 +11,8 @@ class App extends Component {
   };
 
   handleSubmit = event => {
-    //event.preventDefault();
+    event.preventDefault();
+    console.log('Was clicked.');
     this.setState({ mounted: false });
   };
 
@@ -21,7 +24,14 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          <Form onSubmit={this.handleSubmit} className="animated fadeOutDown"/>
+          <CSSTransitionGroup
+            transitionName="fade"
+            transitionAppear={true}
+            transitionAppearTimeout={500}
+            transitionEnter={false}
+            transitionLeaveTimeout={300}>
+            {this.state.mounted && <Form onSubmit={this.handleSubmit} />}
+          </CSSTransitionGroup>
         </p>
       </div>
     );
