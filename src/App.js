@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import { HashRouter, Route } from 'react-router-dom';
+import Landing from './components/Landing';
+import Search from './components/Search';
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="landing">
-          <h1>sVideo</h1>
-          <input type="text" placeholder="Search" />
+      <HashRouter>
+        <div className="App">
+          <Route exact path='/' component={Landing} />
+          <Route path='/search' component={Search} />
         </div>
-      </div>
+      </HashRouter>
     );
   }
 }

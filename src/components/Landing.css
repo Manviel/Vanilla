@@ -1,0 +1,19 @@
+body {
+  background-image: url(../img/3.jpg);
+  background-size: cover;
+}
+
+.landing {
+  background-color: rgba(211, 211, 211, 0.7);
+  padding: 10px 0;
+}
+
+.link {
+  display: block;
+  width: 150px;
+  padding: 5px;
+  margin: 5px auto;
+  text-decoration: none;
+  background: #555;
+  color: #fff;
+}
