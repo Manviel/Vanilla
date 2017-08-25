@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { HashRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './components/Landing';
 import Search from './components/Search';
+
+const FourOhFour = () => <h1>404</h1>;
 
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div className="App">
-          <Route exact path='/' component={Landing} />
-          <Route path='/search' component={Search} />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <Route path='/search' component={Search} />
+            <Route component={FourOhFour} />
+          </Switch>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
