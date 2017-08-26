@@ -40,3 +40,21 @@ body {
   float: left;
   margin-right: 10px;
 }
+
+.search {
+  box-sizing: border-box;
+}
+
+.header {
+  background: #fff;
+  height: 25px;
+  padding: 5px 10px 0;
+}
+
+.header input {
+  float: right;
+}
+
+.header span {
+  float: left;
+}
