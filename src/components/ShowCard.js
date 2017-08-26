@@ -1,10 +1,12 @@
 import React from 'react';
 import { string } from 'prop-types';
 
+import './Style.css';
+
 const ShowCard = (props) => {
   return(
-    <div className='show-card'>
-      <img alt={`${props.title} Show poster`}
+    <div className='wrapper'>
+      <img className='image' alt={`${props.title} Show poster`}
         src={require(`../img/posters/${props.poster}`)} />
       <div>
         <h3>{props.title}</h3>
