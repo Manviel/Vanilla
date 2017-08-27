@@ -20,9 +20,12 @@ body {
   width: 150px;
   padding: 5px;
   margin: 5px auto;
-  text-decoration: none;
   background: #555;
   color: #fff;
+}
+
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -51,14 +54,11 @@ body {
   padding: 5px 10px 0;
 }
 
-.header input {
+.header input,
+.header span {
   float: right;
 }
 
-.header span {
+.header strong {
   float: left;
-}
-
-.header a {
-  text-decoration: none;
 }
