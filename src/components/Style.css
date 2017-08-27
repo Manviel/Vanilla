@@ -58,3 +58,7 @@ body {
 .header span {
   float: left;
 }
+
+.header a {
+  text-decoration: none;
+}

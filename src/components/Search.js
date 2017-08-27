@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-
 import ShowCard from './ShowCard';
-import preload from '../data/data.json';
 
 class Search extends Component {
   state = {
     searchTerm: ''
+  };
+
+  props: {
+    shows: Array<Show>
   };
 
   handleSearchTerm = event => {
@@ -22,7 +24,7 @@ class Search extends Component {
             type="text" placeholder="Search" />
         </header>
         <div className='container'>
-          {preload.shows
+          {this.props.shows
             .filter(
               show =>
                 `${show.title} ${show.description}`.toUpperCase()
