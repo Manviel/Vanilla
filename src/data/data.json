@@ -1,22 +1,6 @@
 {
     "shows": [
         {
-            "title": "Atlanta",
-            "year": "2008–2013",
-            "description": "Two cousins, with different views on art versus commerce, on their way up through the Atlanta rap scene; \"Earnest 'Earn' Marks,\" an ambitious college drop-out and his estranged cousin, who suddenly becomes a star.",
-            "poster": "a.jpg",
-            "imdbID": "tt4288182",
-            "trailer": "MpEdJ-mmTlY"
-        },
-        {
-            "title": "Billions",
-            "year": "2016–",
-            "description": "U.S. Attorney Chuck Rhoades goes after hedge fund king, Bobby \"Axe\" Axelrod in a battle between two powerful New York figures.",
-            "poster": "b.jpg",
-            "imdbID": "tt4270492",
-            "trailer": "_raEUMLL-ZI"
-        },
-        {
             "title": "Black Mirror",
             "year": "2011–",
             "description": "A television anthology series that shows the dark side of life and technology.",
@@ -111,6 +95,22 @@
             "poster": "v.jpg",
             "imdbID": "tt1759761",
             "trailer": "I2HoCG_iyhU"
+        },
+        {
+            "title": "Atlanta",
+            "year": "2008–2013",
+            "description": "Two cousins, with different views on art versus commerce, on their way up through the Atlanta rap scene; \"Earnest 'Earn' Marks,\" an ambitious college drop-out and his estranged cousin, who suddenly becomes a star.",
+            "poster": "a.jpg",
+            "imdbID": "tt4288182",
+            "trailer": "MpEdJ-mmTlY"
+        },
+        {
+            "title": "Billions",
+            "year": "2016–",
+            "description": "U.S. Attorney Chuck Rhoades goes after hedge fund king, Bobby \"Axe\" Axelrod in a battle between two powerful New York figures.",
+            "poster": "b.jpg",
+            "imdbID": "tt4270492",
+            "trailer": "_raEUMLL-ZI"
         },
         {
             "title": "Westworld",
