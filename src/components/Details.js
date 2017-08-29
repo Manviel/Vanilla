@@ -20,12 +20,12 @@ class Details extends Component {
             <h1>{title}</h1>
             <h2>({year})</h2>
             <p>{description}</p>
-            <iframe height="240" width="360"
-              title="YouTube Video Frame"
-              src={`https://www.youtube.com/embed/${trailer}`}
-              frameBorder="0"
-              allowFullScreen
-            />
+            <div className="video">
+              <iframe title="YouTube Video Frame"
+                src={`https://www.youtube.com/embed/${trailer}`}
+                frameBorder="0"
+                allowFullScreen />
+            </div>
           </div>
         </section>
       </div>
