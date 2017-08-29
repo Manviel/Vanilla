@@ -33,13 +33,13 @@ class Landing extends Component {
 }
 
 const mapStateToProps = state => ({
-  searchTerm: state.searchTerm
-});
+    searchTerm: state.searchTerm
+ });
 
-const mapDispatchToProps = (dispatch: Function) => ({
-  handleSearchTerm(event) {
-    dispatch(setSearchTerm(event.target.value));
-  }
-});
+ const mapDispatchToProps = (dispatch: Function) => ({
+   handleSearchTerm(event) {
+     dispatch(setSearchTerm(event.target.value));
+   }
+ });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+ export default connect(mapStateToProps, mapDispatchToProps)(Landing);

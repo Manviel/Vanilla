@@ -35,7 +35,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  showSearch: false
+  showSearch: false,
 };
 
 const mapStateToProps = state => ({
