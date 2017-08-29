@@ -15,13 +15,12 @@ export function addApiData(apiData: Show) {
 
 export function getApiDetails(imdbID: string) {
   return (dispatch: Function) => {
-    axios
-      .get(`http://localhost:3000/${imdbID}`)
+    axios.get(`http://localhost:3000/${imdbID}`)
       .then(response => {
-        dispatch(addApiData(response.data))
+        dispatch(addApiData(response.data));
       })
       .catch(error => {
-        console.error('axios error', error);
+        console.log(error.response.data);
       });
   };
 }
