@@ -11,9 +11,9 @@ class Details extends Component {
     const { title, description, year, poster, trailer } = this.props.show;
 
     return(
-      <div className='details'>
+      <div>
         <Header />
-        <section className="landing">
+        <section className="details">
           <img alt={`For ${title}`} className="pic"
             src={require(`../img/posters/${poster}`)} />
           <div>
