@@ -3,10 +3,6 @@ import Header from './Header';
 import './Style.css';
 
 class Details extends Component {
-  props: {
-    show: Show
-  };
-
   render() {
     const { title, description, year, poster, trailer } = this.props.show;
 

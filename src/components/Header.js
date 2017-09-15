@@ -42,7 +42,7 @@ const mapStateToProps = state => ({
   searchTerm: state.searchTerm
 });
 
-const mapDispatchToProps = (dispatch: Function) => ({
+const mapDispatchToProps = dispatch => ({
   handleSearchTerm(event) {
     dispatch(setSearchTerm(event.target.value));
   }

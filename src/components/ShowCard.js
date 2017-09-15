@@ -7,7 +7,6 @@ class ShowCard extends Component {
   shouldComponentUpdate() {
     return false;
   }
-  props: Show;
 
   render() {
     return(

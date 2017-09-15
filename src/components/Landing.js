@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import type { RouterHistory } from 'react-router-dom';
 import './Style.css';
 import { setSearchTerm } from '../redux/actionCreators';
 
 class Landing extends Component {
-  props: {
-    searchTerm: string,
-    handleSearchTerm: Function,
-    history: RouterHistory
-  };
-
-  goToSearch = (event: SyntheticEvent) => {
+  goToSearch = (event) => {
     event.preventDefault();
     this.props.history.push('/search');
   };
@@ -36,7 +29,7 @@ const mapStateToProps = state => ({
     searchTerm: state.searchTerm
  });
 
- const mapDispatchToProps = (dispatch: Function) => ({
+ const mapDispatchToProps = dispatch => ({
    handleSearchTerm(event) {
      dispatch(setSearchTerm(event.target.value));
    }
