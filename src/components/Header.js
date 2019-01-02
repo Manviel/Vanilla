@@ -1,17 +1,10 @@
 import React from 'react';
 
-const Header = (props) => {
-  return (
-    <header className="header">
-      <strong>
-        sVideo
-      </strong>
-      <input value={props.searchTerm}
-        onChange={props.handleSearchTerm}
-        type="text" placeholder="Search"
-      />
-    </header>
-  );
-};
+const Header = () => (
+  <header className="header indent">
+    <strong className="gray">sVideo</strong>
+    <input type="text" placeholder="Search" className="search" />
+  </header>
+);
 
 export default Header;

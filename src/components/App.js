@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Suspense } from 'react';
 
-import ShowCard from './ShowCard';
-import Header from './Header';
+const ShowCard = React.lazy(() => import('./ShowCard'));
+const Header = React.lazy(() => import('./Header'));
 
 import '../styles/index.css';
 
@@ -22,12 +22,12 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
+      <Suspense fallback={<div className="indent">Loading...</div>}>
         <Header />
-        <div className="container">
+        <article className="container indent">
           {this.state.data && this.state.data.map(show => <ShowCard key={show.id} {...show} />)}
-        </div>
-      </Fragment>
+        </article>
+      </Suspense>
     );
   }
 }
