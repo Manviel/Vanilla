@@ -1,42 +1,35 @@
-import React, { Component, Suspense } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 
-const Landing = React.lazy(() => import("./Landing"));
-const Details = React.lazy(() => import("./Details"));
-const Header = React.lazy(() => import("./Header"));
+const Landing = lazy(() => import("./Landing"));
+const Details = lazy(() => import("./Details"));
+const Header = lazy(() => import("./Header"));
 
 import "../styles/index.css";
+import "../styles/media.css";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [data, setData] = useState([]);
 
-    this.state = {
-      data: null
-    };
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
-      .then(json => this.setState({ data: json }));
-  }
+      .then(json => setData(json));
+  }, []);
 
-  render() {
-    return (
-      <Suspense fallback={<div className="indent">Loading...</div>}>
-        <Header />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={props => <Landing data={this.state.data} {...props} />}
-          />
-          <Route path="/:id" render={props => <Details {...props} />} />
-        </Switch>
-      </Suspense>
-    );
-  }
-}
+  return (
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Header />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={props => <Landing data={data} {...props} />}
+        />
+        <Route path="/:id" render={props => <Details {...props} />} />
+      </Switch>
+    </Suspense>
+  );
+};
 
 export default App;
