@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 const Landing = lazy(() => import("./Landing"));
 const Details = lazy(() => import("./Details"));
 const Header = lazy(() => import("./Header"));
+const Albums = lazy(() => import("./Albums"));
 
 import "../styles/index.css";
 import "../styles/media.css";
@@ -26,7 +27,8 @@ const App = () => {
           path="/"
           render={props => <Landing data={data} {...props} />}
         />
-        <Route path="/:id" render={props => <Details {...props} />} />
+        <Route exact path="/:id" render={props => <Details {...props} />} />
+        <Route path="/:id/albums" render={props => <Albums {...props} />} />
       </Switch>
     </Suspense>
   );
