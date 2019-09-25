@@ -1,12 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => (
+const Header = ({ handleFilter, showFilter }) => (
   <header className="header border">
     <Link to="/" className="gray">
       Today
     </Link>
-    <input type="text" className="search" placeholder="Search" />
+    {showFilter ? (
+      <input
+        type="text"
+        className="control search"
+        placeholder="Search"
+        onChange={handleFilter}
+      />
+    ) : (
+      <p className="control">{new Date().toDateString()}</p>
+    )}
   </header>
 );
 
