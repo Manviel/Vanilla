@@ -5,6 +5,7 @@ const Landing = lazy(() => import("./Landing"));
 const Details = lazy(() => import("./Details"));
 const Albums = lazy(() => import("./Albums"));
 
+import "../styles/variables.css";
 import "../styles/index.css";
 import "../styles/media.css";
 
