@@ -1,13 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  color: #000000;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: #666666;
+  color: inherit;
 }
 
 .white {
@@ -35,6 +34,9 @@ a {
 .container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.content {
   padding: 16px;
 }
 
@@ -49,18 +51,9 @@ a {
 .header {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-}
-
-.control {
-  margin: 16px 0;
-  font-size: 17px;
 }
 
 .search {
-  background: rgba(142, 142, 147, 0.12);
-  border-radius: 10px;
-  padding: 10px 20px;
   border: none;
   outline: none;
 }

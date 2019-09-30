@@ -2,7 +2,7 @@
 
 This React project was bootstrapped using Webpack 4
 
-You can find the most recent version of this app [here](https://5d8e2408031b81a34b28608b--tender-agnesi-b86071.netlify.com/).
+You can find the most recent version of this App [here](https://tender-agnesi-b86071.netlify.com).
 
 ## Updating to New Releases
 

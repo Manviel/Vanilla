@@ -4,16 +4,19 @@ import { Link } from "react-router-dom";
 const Header = ({ handleFilter, showFilter }) => {
   const handleTheme = e => {
     const theme = document.querySelector(".header");
+    const search = document.querySelector(".control");
 
     if (e.target.checked) {
       theme.classList.add("dark");
+      search.classList.add("pallette");
     } else {
       theme.classList.remove("dark");
+      search.classList.remove("pallette");
     }
   };
 
   return (
-    <header className="header border light">
+    <header className="header content border light">
       <nav className="space">
         <Link to="/" className="gray">
           Today

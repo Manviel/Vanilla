@@ -22,7 +22,7 @@ const Albums = ({ match }) => {
   return (
     <>
       <Header />
-      <div className="header">
+      <div className="header content">
         {data &&
           data.map((group, i) => (
             <section className="group" key={`g${i}`}>

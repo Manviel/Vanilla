@@ -15,7 +15,7 @@ const Details = ({ match }) => {
   return (
     <>
       <Header />
-      <article className="container">
+      <article className="container content">
         <div className="details">
           <h3 className="title white">{data && data.name}</h3>
           <h5 className="subtitle">{data && data.email}</h5>

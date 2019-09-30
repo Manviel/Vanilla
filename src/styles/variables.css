@@ -1,20 +1,28 @@
 :root {
   --c-light-background: #f9f9f9;
   --c-light-checkbox: #4cd964;
+  --c-light-primary: #666666;
+  --c-light-search: rgba(142, 142, 147, 0.12);
   --c-dark-background: #000000;
   --c-dark-checkbox: #007aff;
+  --c-dark-primary: #ffffff;
+  --c-dark-search: #444444;
 }
 
 .light {
   --c-background: var(--c-light-background);
   --c-checkbox: var(--c-light-checkbox);
+  --c-color: var(--c-light-primary);
   background: var(--c-background);
+  color: var(--c-color);
 }
 
 .dark {
   --c-background: var(--c-dark-background);
   --c-checkbox: var(--c-dark-checkbox);
+  --c-color: var(--c-dark-primary);
   background: var(--c-background);
+  color: var(--c-color);
 }
 
 .theme {
@@ -50,4 +58,18 @@
 .theme:checked + .switch::after {
   left: calc(100%);
   transform: translateX(-100%);
+}
+
+.control {
+  --c-search: var(--c-light-search);
+  background: var(--c-search);
+  margin: 16px 0;
+  font-size: 17px;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.pallette {
+  --c-search: var(--c-dark-search);
+  background: var(--c-search);
 }
