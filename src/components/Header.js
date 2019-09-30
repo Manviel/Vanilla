@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ handleFilter, showFilter }) => {
+import AutoComplete from "./AutoComplete";
+
+const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
   const handleTheme = e => {
     const theme = document.querySelector(".header");
     const search = document.querySelector(".control");
@@ -30,11 +32,10 @@ const Header = ({ handleFilter, showFilter }) => {
         <label htmlFor="switch" className="switch"></label>
       </nav>
       {showFilter ? (
-        <input
-          type="text"
-          className="control search"
-          placeholder="Search"
-          onChange={handleFilter}
+        <AutoComplete
+          handleFilter={handleFilter}
+          showSuggestions={showSuggestions}
+          suggestions={suggestions}
         />
       ) : (
         <p className="control">{new Date().toDateString()}</p>

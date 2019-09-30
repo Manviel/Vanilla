@@ -5,7 +5,11 @@ import { days, groupBy } from "../utils";
 const Header = lazy(() => import("./Header"));
 
 const Albums = ({ match }) => {
-  const [data, setData] = useState([]);
+  const [state, setState] = useState({
+    data: [],
+    suggestions: [],
+    showSuggestions: false
+  });
 
   useEffect(() => {
     fetch(
@@ -15,18 +19,51 @@ const Albums = ({ match }) => {
       .then(json => {
         const result = groupBy(json, "userId");
 
-        setData(result);
+        setState({ ...state, data: result });
       });
   }, []);
 
+  const getData = value => {
+    fetch(`https://api.lyrics.ovh/suggest/${value}`)
+      .then(response => response.json())
+      .then(json =>
+        setState({
+          ...state,
+          suggestions: json.data,
+          showSuggestions: true
+        })
+      );
+  };
+
+  const onChange = e => {
+    const userInput = e.target.value;
+
+    if (userInput.length === 0) {
+      setState({
+        ...state,
+        suggestions: [],
+        showSuggestions: false
+      });
+    } else {
+      getData(userInput);
+    }
+  };
+
+  const { data, showSuggestions, suggestions } = state;
+
   return (
     <>
-      <Header />
+      <Header
+        handleFilter={onChange}
+        showSuggestions={showSuggestions}
+        suggestions={suggestions}
+        showFilter
+      />
       <div className="header content">
         {data &&
           data.map((group, i) => (
             <section className="group" key={`g${i}`}>
-              <h3 className="day">{i < 7 ? days[i] : "Later"}</h3>
+              <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
               <article className="container">
                 {group.map(a => (
                   <section key={a.id} className="album">
@@ -37,7 +74,7 @@ const Albums = ({ match }) => {
             </section>
           ))}
         <section className="stats">
-          <h5 className="total">{data.length} videos</h5>
+          <h5 className="review">{data.length} videos</h5>
           <span className="out">Updated just now</span>
         </section>
       </div>

@@ -1,4 +1,6 @@
 export const days = [
+  "For You",
+  "Recently Played",
   "Monday",
   "Tuesday",
   "Wednesday",

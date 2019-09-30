@@ -144,11 +144,6 @@ a {
   margin-top: 30px;
 }
 
-.total {
-  font-size: 15px;
-  line-height: 20px;
-}
-
 .details:nth-child(odd) {
   background-color: #ffc784;
 }
@@ -163,4 +158,16 @@ a {
 
 .details:nth-child(4n + 4) {
   background-color: #bddfea;
+}
+
+.suggestions {
+  list-style-type: none;
+  background: #fff;
+}
+
+.item {
+  font-size: 20px;
+  color: #ff2d55;
+  padding: 15px 12px;
+  cursor: pointer;
 }
