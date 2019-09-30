@@ -60,21 +60,20 @@ const Albums = ({ match }) => {
         showFilter
       />
       <div className="header content">
-        {data &&
-          data.map((group, i) => (
-            <section className="group" key={`g${i}`}>
-              <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
-              <article className="container">
-                {group.map(a => (
-                  <section key={a.id} className="album">
-                    <h4 className="white">{a.title}</h4>
-                  </section>
-                ))}
-              </article>
-            </section>
-          ))}
+        {data.map((group, i) => (
+          <section className="group" key={`g${i}`}>
+            <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
+            <article className="container">
+              {group.map(a => (
+                <section key={a.id} className="album">
+                  <h4 className="white">{a.title}</h4>
+                </section>
+              ))}
+            </article>
+          </section>
+        ))}
         <section className="stats">
-          <h5 className="review">{data.length} videos</h5>
+          <h5 className="out">{data.length} videos</h5>
           <span className="out">Updated just now</span>
         </section>
       </div>

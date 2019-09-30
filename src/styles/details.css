@@ -1,0 +1,63 @@
+.info {
+  margin-left: 16px;
+}
+
+.group {
+  margin-top: 16px;
+}
+
+.description {
+  margin-bottom: 18px;
+}
+
+.rate {
+  color: #4b4a50;
+  font-size: 60px;
+}
+
+.out {
+  color: #4b4a50;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.card {
+  border-radius: 14px;
+  padding: 18px 20px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.logo {
+  height: 118px;
+  min-width: 118px;
+  background: #f9f9f9;
+  border-radius: 18px;
+}
+
+.album {
+  background-color: #8a8a8f;
+  border-radius: 4px;
+  margin: 3px;
+  padding: 15px;
+  width: 135px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.album:hover {
+  background-color: #c8c7cc;
+}
+
+.circle {
+  background: #fd8206;
+  height: 12px;
+  width: 12px;
+  margin: 6px 4px 0 0;
+  border-radius: 50%;
+}
+
+.stats {
+  text-align: center;
+  margin-top: 30px;
+}

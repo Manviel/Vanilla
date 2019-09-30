@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 const Header = lazy(() => import("./Header"));
 
+import "../styles/details.css";
+
 const Details = ({ match }) => {
   const [data, setData] = useState({});
 
@@ -16,31 +18,34 @@ const Details = ({ match }) => {
     <>
       <Header />
       <article className="container content">
-        <div className="details">
-          <h3 className="title white">{data && data.name}</h3>
-          <h5 className="subtitle">{data && data.email}</h5>
-          <p className="description">{data && data.body}</p>
-        </div>
+        <section className="space details">
+          <figure className="logo"></figure>
+          <div className="info">
+            <h3 className="title white">{data && data.name}</h3>
+            <h5 className="subtitle">{data && data.email}</h5>
+          </div>
+        </section>
         <section className="header card">
           <h3 className="title">Ratings & Reviews</h3>
-          <div className="space">
+          <div className="space description">
             <h6 className="rate">
-              5.0<small className="out">out of 5</small>
+              5.0<small className="out info">out of 5</small>
             </h6>
             <Link to={`${match.params.id}/albums`}>
               <button className="btn">Get</button>
             </Link>
           </div>
+          <p>{data && data.body}</p>
         </section>
-        <div className="card back">
-          <p className="review">Stunning!</p>
-          <section className="container">
+        <section className="card back">
+          <p className="out">Stunning!</p>
+          <div className="container description">
             {[0, 1, 2, 3, 4].map(i => (
-              <div key={i} className="circle"></div>
+              <figure key={i} className="circle"></figure>
             ))}
-          </section>
-          <p className="description">This application is wonderful</p>
-        </div>
+          </div>
+          <p>This application is wonderful</p>
+        </section>
       </article>
     </>
   );

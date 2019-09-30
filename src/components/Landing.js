@@ -31,9 +31,11 @@ const Landing = () => {
   return (
     <>
       <Header handleFilter={handleFilter} showFilter />
-      <article className="container content">
-        {data && data.map(show => <ShowCard key={show.id} {...show} />)}
-      </article>
+      <main className="container content">
+        {data.map(show => (
+          <ShowCard key={show.id} {...show} />
+        ))}
+      </main>
     </>
   );
 };

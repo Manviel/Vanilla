@@ -20,7 +20,7 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
   return (
     <header className="header content border light">
       <nav className="space">
-        <Link to="/" className="gray">
+        <Link to="/" className="main">
           Today
         </Link>
         <input
