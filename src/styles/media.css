@@ -2,6 +2,10 @@
   width: 30%;
 }
 
+.album {
+  width: 18%;
+}
+
 .details:not(:nth-child(3n)) {
   margin-right: 18px;
 }
@@ -9,6 +13,10 @@
 @media screen and (max-width: 375px) {
   .details {
     width: 100%;
+  }
+
+  .album {
+    width: 37%;
   }
 
   .details:not(:nth-child(3n)) {
