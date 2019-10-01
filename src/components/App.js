@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 
+import Loader from "./Loader";
+
 const Landing = lazy(() => import("./Landing"));
 const Details = lazy(() => import("./Details"));
 const Albums = lazy(() => import("./Albums"));
@@ -10,7 +12,7 @@ import "../styles/index.css";
 import "../styles/media.css";
 
 const App = () => (
-  <Suspense fallback={<h1>Loading...</h1>}>
+  <Suspense fallback={<Loader />}>
     <Switch>
       <Route exact path="/" render={props => <Landing {...props} />} />
       <Route exact path="/:id" render={props => <Details {...props} />} />
