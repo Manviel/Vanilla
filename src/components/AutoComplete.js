@@ -1,6 +1,6 @@
 import React from "react";
 
-const Autocomplete = ({ showSuggestions, suggestions, handleFilter }) => (
+const AutoComplete = ({ showSuggestions, suggestions, handleFilter }) => (
   <>
     <input
       type="text"
@@ -24,4 +24,4 @@ const Autocomplete = ({ showSuggestions, suggestions, handleFilter }) => (
   </>
 );
 
-export default Autocomplete;
+export default AutoComplete;

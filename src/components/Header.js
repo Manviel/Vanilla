@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 import AutoComplete from "./AutoComplete";
@@ -44,4 +44,4 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
   );
 };
 
-export default Header;
+export default memo(Header);
