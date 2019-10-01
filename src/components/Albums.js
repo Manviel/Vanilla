@@ -2,7 +2,11 @@ import React, { useState, useEffect, lazy } from "react";
 
 import { days, groupBy } from "../utils";
 
+import Payment from "./Payment";
+
 const Header = lazy(() => import("./Header"));
+
+import "../styles/details.css";
 
 const Albums = ({ match }) => {
   const [state, setState] = useState({
@@ -65,9 +69,7 @@ const Albums = ({ match }) => {
             <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
             <article className="container">
               {group.map(a => (
-                <section key={a.id} className="album">
-                  <h4 className="white">{a.title}</h4>
-                </section>
+                <Payment item={a} key={a.id} />
               ))}
             </article>
           </section>
