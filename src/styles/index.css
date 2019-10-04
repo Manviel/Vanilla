@@ -40,12 +40,12 @@ a {
 .search {
   border: none;
   outline: none;
+  margin: 16px 0;
 }
 
 .details {
   margin-bottom: 30px;
   padding: 18px 20px;
-  box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.16);
   flex-grow: 1;
 }
 

@@ -9,12 +9,12 @@
 
 .modal {
   position: fixed;
-  top: 76%;
-  left: 50%;
+  top: 70%;
+  left: 45%;
   transform: translate(-50%, -50%);
   z-index: 1;
   background-color: #e7e6e4;
-  min-width: 345px;
+  min-width: 346px;
 }
 
 .payment {

@@ -38,7 +38,7 @@ const Details = ({ match }) => {
           <p>{data && data.body}</p>
         </section>
         <section className="card control">
-          <p className="out">Stunning!</p>
+          <p>Stunning!</p>
           <div className="container description">
             {[0, 1, 2, 3, 4].map(i => (
               <figure key={i} className="circle"></figure>

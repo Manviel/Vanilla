@@ -62,7 +62,7 @@
 .control {
   --c-search: var(--c-light-search);
   background: var(--c-search);
-  margin: 16px 0;
+  margin: 3px;
   font-size: 17px;
   border-radius: 10px;
   padding: 10px 20px;

@@ -3,19 +3,10 @@ import { Link } from "react-router-dom";
 
 import AutoComplete from "./AutoComplete";
 
-const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
-  const handleTheme = e => {
-    const theme = document.querySelector(".light");
-    const search = document.querySelector(".control");
+import useTheme from "../utils/useTheme";
 
-    if (e.target.checked) {
-      theme.classList.add("dark");
-      search.classList.add("pallette");
-    } else {
-      theme.classList.remove("dark");
-      search.classList.remove("pallette");
-    }
-  };
+const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
+  const [theme, setTheme] = useTheme();
 
   return (
     <header className="header content border">
@@ -27,7 +18,8 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
           type="checkbox"
           id="switch"
           className="theme"
-          onChange={handleTheme}
+          checked={theme === "dark"}
+          onChange={setTheme}
         />
         <label htmlFor="switch" className="switch"></label>
       </nav>
@@ -38,7 +30,7 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
           suggestions={suggestions}
         />
       ) : (
-        <p className="control">{new Date().toDateString()}</p>
+        <p className="control search">{new Date().toDateString()}</p>
       )}
     </header>
   );

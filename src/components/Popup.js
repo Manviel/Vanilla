@@ -44,7 +44,7 @@ const Popup = ({ item, setPopup }) => (
         <p className="group space out">
           <small>SHIPPING</small> ${item.id % 2}.00
         </p>
-        <p className="group space description">
+        <p className="group space out description">
           TOTAL{" "}
           <small className="total">${item.userId + (item.id % 2)}.00</small>
         </p>
