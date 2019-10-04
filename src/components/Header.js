@@ -5,7 +5,7 @@ import AutoComplete from "./AutoComplete";
 
 const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
   const handleTheme = e => {
-    const theme = document.querySelector(".header");
+    const theme = document.querySelector(".light");
     const search = document.querySelector(".control");
 
     if (e.target.checked) {
@@ -18,7 +18,7 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
   };
 
   return (
-    <header className="header content border light">
+    <header className="header content border">
       <nav className="space">
         <Link to="/" className="main">
           Today

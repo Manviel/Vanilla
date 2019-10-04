@@ -38,11 +38,11 @@ const Popup = ({ item, setPopup }) => (
         <i className="arrow right"></i>
       </section>
       <section className="info border">
-        <p className="group space">
-          <small className="out">SALES TAX</small> ${item.userId}.00
+        <p className="group space out">
+          <small>SALES TAX</small> ${item.userId}.00
         </p>
-        <p className="group space">
-          <small className="out">SHIPPING</small> ${item.id % 2}.00
+        <p className="group space out">
+          <small>SHIPPING</small> ${item.id % 2}.00
         </p>
         <p className="group space description">
           TOTAL{" "}

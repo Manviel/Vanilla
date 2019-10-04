@@ -18,10 +18,10 @@ const Details = ({ match }) => {
     <>
       <Header />
       <article className="container content">
-        <section className="space details">
+        <section className="space details control">
           <figure className="logo"></figure>
           <div className="info">
-            <h3 className="title white">{data && data.name}</h3>
+            <h3 className="title">{data && data.name}</h3>
             <h5 className="subtitle">{data && data.email}</h5>
           </div>
         </section>
@@ -37,7 +37,7 @@ const Details = ({ match }) => {
           </div>
           <p>{data && data.body}</p>
         </section>
-        <section className="card back">
+        <section className="card control">
           <p className="out">Stunning!</p>
           <div className="container description">
             {[0, 1, 2, 3, 4].map(i => (

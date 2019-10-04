@@ -1,5 +1,4 @@
 :root {
-  --c-light-background: #f9f9f9;
   --c-light-checkbox: #4cd964;
   --c-light-primary: #666666;
   --c-light-search: rgba(142, 142, 147, 0.12);
@@ -10,7 +9,7 @@
 }
 
 .light {
-  --c-background: var(--c-light-background);
+  --c-background: var(--c-dark-primary);
   --c-checkbox: var(--c-light-checkbox);
   --c-color: var(--c-light-primary);
   background: var(--c-background);
