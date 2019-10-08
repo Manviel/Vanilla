@@ -63,11 +63,11 @@ const Albums = ({ match }) => {
         suggestions={suggestions}
         showFilter
       />
-      <div className="header content">
+      <div className="flex header content">
         {data.map((group, i) => (
           <section className="group" key={`g${i}`}>
             <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
-            <article className="container">
+            <article className="flex container">
               {group.map(a => (
                 <Payment item={a} key={a.id} />
               ))}

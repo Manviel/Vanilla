@@ -1,5 +1,6 @@
 .info {
   margin-left: 16px;
+  justify-content: space-between;
 }
 
 .group {
@@ -56,4 +57,16 @@
 .stats {
   text-align: center;
   margin-top: 30px;
+}
+
+.name {
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.0145455em;
+}
+
+.developer {
+  color: #8c8c8c;
+  font-size: 15px;
+  line-height: 18px;
 }

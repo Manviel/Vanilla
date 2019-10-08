@@ -31,7 +31,7 @@ const Landing = () => {
   return (
     <>
       <Header handleFilter={handleFilter} showFilter />
-      <main className="container content">
+      <main className="flex container content">
         {data.map(show => (
           <ShowCard key={show.id} {...show} />
         ))}

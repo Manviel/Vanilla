@@ -5,7 +5,7 @@ import "../styles/popup.css";
 const Popup = ({ item, setPopup }) => (
   <aside className="overlay">
     <article className="content modal">
-      <header className="space border">
+      <header className="flex space border">
         <h3 className="payment day">
           <svg
             width="15"
@@ -27,24 +27,24 @@ const Popup = ({ item, setPopup }) => (
           Cancel
         </button>
       </header>
-      <section className="space border">
+      <section className="flex space border">
         <figure className="bill"></figure>
         <figcaption className="caption">Capital one bank</figcaption>
         <i className="arrow right"></i>
       </section>
-      <section className="space border">
+      <section className="flex space border">
         <dt className="out">SHIPPING</dt>
         <dd className="caption">{item.title}</dd>
         <i className="arrow right"></i>
       </section>
       <section className="info border">
-        <p className="group space out">
+        <p className="flex group space out">
           <small>SALES TAX</small> ${item.userId}.00
         </p>
-        <p className="group space out">
+        <p className="flex group space out">
           <small>SHIPPING</small> ${item.id % 2}.00
         </p>
-        <p className="group space out description">
+        <p className="flex group space out description">
           TOTAL{" "}
           <small className="total">${item.userId + (item.id % 2)}.00</small>
         </p>

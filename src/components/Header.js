@@ -9,8 +9,8 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
   const [theme, setTheme] = useTheme();
 
   return (
-    <header className="header content border">
-      <nav className="space">
+    <header className="flex header content border">
+      <nav className="flex space">
         <Link to="/" className="main">
           Today
         </Link>
