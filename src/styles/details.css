@@ -70,3 +70,19 @@
   font-size: 15px;
   line-height: 18px;
 }
+
+.more {
+  background: #007aff;
+  color: #fff;
+  border-radius: 23px;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.more span {
+  height: 27px;
+}

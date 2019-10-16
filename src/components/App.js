@@ -6,6 +6,7 @@ import Loader from "./Loader";
 const Landing = lazy(() => import("./Landing"));
 const Details = lazy(() => import("./Details"));
 const Albums = lazy(() => import("./Albums"));
+const Home = lazy(() => import("./Home"));
 
 import "../styles/variables.css";
 import "../styles/index.css";
@@ -15,6 +16,7 @@ const App = () => (
   <Suspense fallback={<Loader />}>
     <Switch>
       <Route exact path="/" render={props => <Landing {...props} />} />
+      <Route path="/home" render={props => <Home {...props} />} />
       <Route exact path="/:id" render={props => <Details {...props} />} />
       <Route path="/:id/albums" render={props => <Albums {...props} />} />
     </Switch>

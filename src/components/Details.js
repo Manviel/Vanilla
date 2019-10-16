@@ -23,9 +23,16 @@ const Details = ({ match }) => {
           <div className="flex header info">
             <h3 className="name day">{data && data.name}</h3>
             <h5 className="developer description">{data && data.email}</h5>
-            <Link to={`${match.params.id}/albums`}>
-              <button className="btn">Get</button>
-            </Link>
+            <section className="flex space">
+              <Link to={`${match.params.id}/albums`}>
+                <button className="btn">Get</button>
+              </Link>
+              <Link to="/home">
+                <div className="flex more">
+                  <span>&hellip;</span>
+                </div>
+              </Link>
+            </section>
           </div>
         </section>
         <section className="flex header content">

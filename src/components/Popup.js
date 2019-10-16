@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../styles/popup.css";
 
@@ -49,9 +50,9 @@ const Popup = ({ item, setPopup }) => (
           <small className="total">${item.userId + (item.id % 2)}.00</small>
         </p>
       </section>
-      <button className="group btn" onClick={() => setPopup(false)}>
-        Pay with Touch ID
-      </button>
+      <Link to="/home">
+        <button className="group btn">Pay with Touch ID</button>
+      </Link>
     </article>
   </aside>
 );

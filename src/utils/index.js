@@ -1,13 +1,28 @@
 export const days = [
   "For You",
-  "Recently Played",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday"
+  "Sunday",
+  "Recently Played"
+];
+
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 
 export const groupBy = (arr, prop) => {
