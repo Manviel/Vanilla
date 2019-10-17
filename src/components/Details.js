@@ -22,7 +22,7 @@ const Details = ({ match }) => {
           <figure className="logo"></figure>
           <div className="flex header info">
             <h3 className="name day">{data && data.name}</h3>
-            <h5 className="developer description">{data && data.email}</h5>
+            <h4 className="developer description">{data && data.email}</h4>
             <section className="flex space">
               <Link to={`${match.params.id}/albums`}>
                 <button className="btn">Get</button>
@@ -35,23 +35,41 @@ const Details = ({ match }) => {
             </section>
           </div>
         </section>
+
         <section className="flex header content">
           <h3 className="title">Ratings & Reviews</h3>
           <div className="flex space description">
-            <h6 className="rate">
+            <h5 className="rate">
               5.0<small className="out info">out of 5</small>
-            </h6>
+            </h5>
           </div>
         </section>
-        <p className="card control">{data && data.body}</p>
+
+        <p className="card control">
+          Kharkiv student. Like video games and news about technologies.{" "}
+          {data && data.body}
+        </p>
+
         <section className="card control">
-          <p>Stunning!</p>
-          <div className="flex container description">
-            {[0, 1, 2, 3, 4].map(i => (
-              <figure key={i} className="circle"></figure>
-            ))}
+          <p className="prime">Stunning!</p>
+          <div className="flex container description space">
+            <figure className="flex">
+              {[0, 1, 2, 3, 4].map(i => (
+                <div key={i} className="circle"></div>
+              ))}
+            </figure>
+            <figcaption>Merezhko Michael</figcaption>
           </div>
           <p>This application is wonderful</p>
+        </section>
+
+        <section className="flex around">
+          <a href="https://www.instagram.com/miannelst">
+            <button className="btn inst">Instagram</button>
+          </a>
+          <a href="https://github.com/Manviel">
+            <button className="btn follow">GitHub</button>
+          </a>
         </section>
       </article>
     </>

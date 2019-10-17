@@ -79,6 +79,7 @@ a {
   padding: 8px 20px 6px;
   text-transform: uppercase;
   font-weight: bold;
+  transition: 0.5s;
 }
 
 .suggestions {

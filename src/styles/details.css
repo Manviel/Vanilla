@@ -37,6 +37,11 @@
   border-radius: 18px;
 }
 
+.logo:hover {
+  background: #fef5ec;
+  box-shadow: 0 20px 20px rgba(250, 207, 188, 0.3);
+}
+
 .album {
   border-radius: 4px;
   transition: 0.3s;
@@ -50,7 +55,7 @@
   background: #fd8206;
   height: 12px;
   width: 12px;
-  margin: 6px 4px 0 0;
+  margin: 8px 4px 0 0;
   border-radius: 50%;
 }
 
@@ -85,4 +90,31 @@
 
 .more span {
   height: 27px;
+}
+
+.prime {
+  color: #393b3f;
+}
+
+.around {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.inst {
+  background: #feebef;
+  color: #212330;
+}
+
+.inst:hover {
+  box-shadow: 0 20px 20px rgba(231, 103, 129, 0.2);
+}
+
+.follow {
+  background: #ffe79a;
+  color: #393d41;
+}
+
+.follow:hover {
+  box-shadow: 0 20px 20px rgba(255, 255, 0, 0.2);
 }
