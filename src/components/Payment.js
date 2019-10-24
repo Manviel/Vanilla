@@ -1,23 +1,20 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
 
-import Loader from "./Loader";
-
-const Popup = lazy(() => import("./Popup"));
+import Popup from "./Popup";
 
 const Payment = ({ item }) => {
   const [popup, setPopup] = useState(false);
 
   return (
-    <section className="album control">
-      <h4 className="title" onClick={() => setPopup(true)}>
-        {item.title}
-      </h4>
-      {popup && (
-        <Suspense fallback={<Loader />}>
-          <Popup item={item} setPopup={setPopup} />
-        </Suspense>
-      )}
-    </section>
+    <>
+      <section className="flex album control" onClick={() => setPopup(true)}>
+        <div className="cover"></div>
+        <h4>{item.title}</h4>
+      </section>
+      {popup &&
+        createPortal(<Popup item={item} setPopup={setPopup} />, document.body)}
+    </>
   );
 };
 

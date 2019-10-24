@@ -5,7 +5,6 @@
 
 .group {
   margin-top: 16px;
-  text-align: center;
 }
 
 .description {
@@ -35,6 +34,7 @@
   min-width: 118px;
   background: #f9f9f9;
   border-radius: 18px;
+  transition: 0.3s;
 }
 
 .logo:hover {
@@ -45,10 +45,7 @@
 .album {
   border-radius: 4px;
   transition: 0.3s;
-}
-
-.album:hover {
-  background-color: #c8c7cc;
+  text-transform: capitalize;
 }
 
 .circle {
@@ -117,4 +114,12 @@
 
 .follow:hover {
   box-shadow: 0 20px 20px rgba(255, 255, 0, 0.2);
+}
+
+.cover {
+  min-width: 3px;
+  height: 100%;
+  background: #c777da;
+  border-radius: 50px;
+  margin-right: 16px;
 }
