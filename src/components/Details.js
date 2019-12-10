@@ -1,5 +1,7 @@
-import React, { useState, useEffect, lazy } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
+
+import Loader from "./Loader";
 
 const Header = lazy(() => import("./Header"));
 
@@ -16,7 +18,9 @@ const Details = ({ match }) => {
 
   return (
     <>
-      <Header />
+      <Suspense fallback={<Loader />}>
+        <Header />
+      </Suspense>
       <article className="flex container content">
         <section className="flex details">
           <figure className="logo"></figure>

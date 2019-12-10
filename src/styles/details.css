@@ -3,10 +3,6 @@
   justify-content: space-between;
 }
 
-.group {
-  margin-top: 16px;
-}
-
 .description {
   margin-bottom: 18px;
 }
@@ -42,23 +38,12 @@
   box-shadow: 0 20px 20px rgba(250, 207, 188, 0.3);
 }
 
-.album {
-  border-radius: 4px;
-  transition: 0.3s;
-  text-transform: capitalize;
-}
-
 .circle {
   background: #fd8206;
   height: 12px;
   width: 12px;
   margin: 8px 4px 0 0;
   border-radius: 50%;
-}
-
-.stats {
-  text-align: center;
-  margin-top: 30px;
 }
 
 .name {
@@ -114,12 +99,4 @@
 
 .follow:hover {
   box-shadow: 0 20px 20px rgba(255, 255, 0, 0.2);
-}
-
-.cover {
-  min-width: 3px;
-  height: 100%;
-  background: #c777da;
-  border-radius: 50px;
-  margin-right: 16px;
 }

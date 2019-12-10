@@ -1,12 +1,13 @@
-import React, { useState, useEffect, lazy } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 
 import { days, groupBy } from "../utils";
 
 import Payment from "./Payment";
+import Loader from "./Loader";
 
 const Header = lazy(() => import("./Header"));
 
-import "../styles/details.css";
+import "../styles/albums.css";
 
 const Albums = ({ match }) => {
   const [state, setState] = useState({
@@ -57,12 +58,14 @@ const Albums = ({ match }) => {
 
   return (
     <>
-      <Header
-        handleFilter={onChange}
-        showSuggestions={showSuggestions}
-        suggestions={suggestions}
-        showFilter
-      />
+      <Suspense fallback={<Loader />}>
+        <Header
+          handleFilter={onChange}
+          showSuggestions={showSuggestions}
+          suggestions={suggestions}
+          showFilter
+        />
+      </Suspense>
       <div className="flex header content">
         {data.map((group, i) => (
           <section className="group" key={`g${i}`}>

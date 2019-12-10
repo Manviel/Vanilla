@@ -8,9 +8,10 @@ const Payment = ({ item }) => {
 
   return (
     <>
-      <section className="flex album control" onClick={() => setPopup(true)}>
-        <div className="cover"></div>
-        <h4>{item.title}</h4>
+      <section className="album control" onClick={() => setPopup(true)}>
+        <span className="category">Black</span>
+        <span className="category sub">Layers</span>
+        <strong className="teaser">{item.title}</strong>
       </section>
       {popup &&
         createPortal(<Popup item={item} setPopup={setPopup} />, document.body)}

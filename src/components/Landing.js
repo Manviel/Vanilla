@@ -1,4 +1,6 @@
-import React, { lazy, useState, useEffect } from "react";
+import React, { lazy, useState, useEffect, Suspense } from "react";
+
+import Loader from "./Loader";
 
 const Header = lazy(() => import("./Header"));
 const ShowCard = lazy(() => import("./ShowCard"));
@@ -29,14 +31,14 @@ const Landing = () => {
   };
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <Header handleFilter={handleFilter} showFilter />
       <main className="flex container content">
         {data.map(show => (
           <ShowCard key={show.id} {...show} />
         ))}
       </main>
-    </>
+    </Suspense>
   );
 };
 
