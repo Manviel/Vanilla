@@ -1,11 +1,11 @@
 :root {
   --c-light-checkbox: #4cd964;
   --c-light-primary: #666666;
-  --c-light-search: rgba(142, 142, 147, 0.12);
-  --c-dark-background: #000000;
+  --c-light: rgba(142, 142, 147, 0.12);
+  --c-dark-background: #27292d;
   --c-dark-checkbox: #007aff;
-  --c-dark-primary: #ffffff;
-  --c-dark-search: #444444;
+  --c-dark-primary: #fff;
+  --c-secondary: #d6ddff;
 }
 
 .light {
@@ -60,15 +60,8 @@
 }
 
 .control {
-  --c-search: var(--c-light-search);
-  background: var(--c-search);
+  background: var(--c-light);
   margin: 3px;
   font-size: 17px;
-  border-radius: 10px;
   padding: 10px 20px;
-}
-
-.pallette {
-  --c-search: var(--c-dark-search);
-  background: var(--c-search);
 }

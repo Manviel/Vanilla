@@ -1,9 +1,11 @@
 import React, { lazy, useState, useEffect, Suspense } from "react";
+import { Link } from "react-router-dom";
 
-import Loader from "./Loader";
+import Loader from "../components/Loader";
+import AutoComplete from "../components/AutoComplete";
 
-const Header = lazy(() => import("./Header"));
-const ShowCard = lazy(() => import("./ShowCard"));
+const Header = lazy(() => import("../components/Header"));
+const ShowCard = lazy(() => import("../components/ShowCard"));
 
 const Landing = () => {
   const [data, setData] = useState([]);
@@ -33,9 +35,13 @@ const Landing = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Header handleFilter={handleFilter} showFilter />
-      <main className="flex container content">
+      <AutoComplete />
+
+      <main className="flex container">
         {data.map(show => (
-          <ShowCard key={show.id} {...show} />
+          <Link key={show.id} to={`/${show.id}`} className="item">
+            <ShowCard title={show.title} />
+          </Link>
         ))}
       </main>
     </Suspense>

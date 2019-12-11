@@ -1,9 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 
-import Loader from "./Loader";
+import Loader from "../components/Loader";
 
-const Header = lazy(() => import("./Header"));
+const Header = lazy(() => import("../components/Header"));
 
 import "../styles/details.css";
 

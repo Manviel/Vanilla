@@ -1,15 +1,13 @@
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
-import AutoComplete from "./AutoComplete";
-
 import useTheme from "../utils/useTheme";
 
-const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
+const Header = () => {
   const [theme, setTheme] = useTheme();
 
   return (
-    <header className="flex header content border">
+    <header className="flex header">
       <nav className="flex space">
         <Link to="/" className="main">
           Today
@@ -23,15 +21,6 @@ const Header = ({ handleFilter, showFilter, showSuggestions, suggestions }) => {
         />
         <label htmlFor="switch" className="switch"></label>
       </nav>
-      {showFilter ? (
-        <AutoComplete
-          handleFilter={handleFilter}
-          showSuggestions={showSuggestions}
-          suggestions={suggestions}
-        />
-      ) : (
-        <p className="control search">{new Date().toDateString()}</p>
-      )}
     </header>
   );
 };

@@ -20,14 +20,11 @@ export default () => {
       setTheme(localTheme);
 
       const light = document.querySelector(".light");
-      const control = document.querySelectorAll(".control");
 
       if (localTheme === "dark") {
         light.classList.add("dark");
-        control.forEach(i => i.classList.add("pallette"));
       } else {
         light.classList.remove("dark");
-        control.forEach(i => i.classList.remove("pallette"));
       }
     }
   }, [theme]);

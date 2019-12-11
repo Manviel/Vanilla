@@ -2,7 +2,7 @@
   width: 22%;
 }
 
-.album {
+.item {
   width: 25%;
 }
 
@@ -11,7 +11,7 @@
     width: 100%;
   }
 
-  .album {
+  .item {
     width: 100%;
   }
 }

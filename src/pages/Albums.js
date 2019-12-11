@@ -2,18 +2,16 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 
 import { days, groupBy } from "../utils";
 
-import Payment from "./Payment";
-import Loader from "./Loader";
+import Payment from "../components/Payment";
+import Loader from "../components/Loader";
 
-const Header = lazy(() => import("./Header"));
+const Header = lazy(() => import("../components/Header"));
 
 import "../styles/albums.css";
 
 const Albums = ({ match }) => {
   const [state, setState] = useState({
-    data: [],
-    suggestions: [],
-    showSuggestions: false
+    data: []
   });
 
   useEffect(() => {
@@ -33,9 +31,7 @@ const Albums = ({ match }) => {
       .then(response => response.json())
       .then(json =>
         setState({
-          ...state,
-          suggestions: json.data,
-          showSuggestions: true
+          ...state
         })
       );
   };
@@ -45,26 +41,21 @@ const Albums = ({ match }) => {
 
     if (userInput.length === 0) {
       setState({
-        ...state,
-        suggestions: [],
-        showSuggestions: false
+        ...state
       });
     } else {
       getData(userInput);
     }
   };
 
-  const { data, showSuggestions, suggestions } = state;
+  const { data } = state;
 
   return (
     <>
       <Suspense fallback={<Loader />}>
-        <Header
-          handleFilter={onChange}
-          showSuggestions={showSuggestions}
-          suggestions={suggestions}
-          showFilter
-        />
+        <Header handleFilter={onChange} showFilter />
+
+        <AutoComplete handleFilter={handleFilter} />
       </Suspense>
       <div className="flex header content">
         {data.map((group, i) => (
@@ -72,7 +63,7 @@ const Albums = ({ match }) => {
             <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
             <article className="flex container">
               {group.map(a => (
-                <Payment item={a} key={a.id} />
+                <Payment key={a.id} item={a} />
               ))}
             </article>
           </section>

@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const ShowCard = props => (
-  <Link to={`/${props.id}`} className="details control">
-    <dt className="subtitle day">World premiere</dt>
-    <h3 className="title">{props.title}</h3>
-    <dd>{props.body}</dd>
-  </Link>
+import "../styles/albums.css";
+
+const ShowCard = ({ title }) => (
+  <section className="album control">
+    <span className="category">Black</span>
+    <span className="category sub">Layers</span>
+    <strong className="teaser">{title}</strong>
+  </section>
 );
 
 export default ShowCard;

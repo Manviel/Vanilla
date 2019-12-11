@@ -1,27 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AutoComplete = ({ showSuggestions, suggestions, handleFilter }) => (
-  <>
-    <input
-      type="text"
-      className="control search"
-      onChange={handleFilter}
-      placeholder="Search"
-    />
-    {showSuggestions && suggestions.length > 0 ? (
-      <ul className="suggestions">
-        {suggestions.map(su => (
-          <li
-            className="item border"
-            key={su.id}
-            onClick={() => (window.location.href = su.link)}
-          >
-            {su.title}
-          </li>
-        ))}
-      </ul>
-    ) : null}
-  </>
-);
+const AutoComplete = ({ handleFilter }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <dt className="search" onClick={() => setOpen(!open)}>
+        Sort
+      </dt>
+      {open && (
+        <ul className="filters">
+          <li className="search">Latest</li>
+          <li className="search">Lowest priced</li>
+          <li className="search">Highest priced</li>
+        </ul>
+      )}
+    </>
+  );
+};
 
 export default AutoComplete;

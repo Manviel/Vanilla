@@ -1,3 +1,8 @@
+html {
+  font-size: 62.5%;
+  letter-spacing: 0.03em;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +15,7 @@ a {
 }
 
 .border {
-  border-bottom: 1px solid #bcbbc1;
+  border-bottom: 2px solid var(--c-light);
 }
 
 .flex {
@@ -19,12 +24,17 @@ a {
 
 .main {
   font-size: 34px;
-  letter-spacing: 0.0120588em;
+  letter-spacing: 0.06em;
+  padding: 0.2em 0.4em;
   font-weight: bold;
+  background-color: var(--c-secondary);
+  color: #000;
+  text-transform: uppercase;
 }
 
 .container {
   flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 .content {
@@ -40,16 +50,24 @@ a {
 }
 
 .search {
-  border: none;
-  outline: none;
-  margin: 16px 0;
+  padding: 1.5em;
+  background-color: #ffcccc;
+  color: #000;
+}
+
+.search:hover {
+  background-color: #ffbbbb;
+}
+
+.filters {
+  list-style-type: none;
+  position: absolute;
+  z-index: 10;
 }
 
 .details {
-  margin-bottom: 30px;
   padding: 18px 20px;
   flex-grow: 1;
-  animation: 0.3s ease-in-out both fade-in;
 }
 
 .title {
@@ -81,19 +99,6 @@ a {
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.5s;
-}
-
-.suggestions {
-  list-style-type: none;
-  background: #fff;
-  border-radius: 10px;
-}
-
-.item {
-  font-size: 20px;
-  color: #ff2d55;
-  padding: 15px 12px;
-  cursor: pointer;
 }
 
 .loading {
