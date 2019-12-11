@@ -36,7 +36,7 @@ const Albums = ({ match }) => {
       );
   };
 
-  const onChange = e => {
+  const handleFilter = e => {
     const userInput = e.target.value;
 
     if (userInput.length === 0) {
@@ -53,7 +53,7 @@ const Albums = ({ match }) => {
   return (
     <>
       <Suspense fallback={<Loader />}>
-        <Header handleFilter={onChange} showFilter />
+        <Header />
 
         <AutoComplete handleFilter={handleFilter} />
       </Suspense>

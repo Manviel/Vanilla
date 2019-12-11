@@ -1,0 +1,51 @@
+.header {
+  flex-direction: column;
+}
+
+.drop {
+  padding-bottom: 25px;
+}
+
+.dropdown {
+  visibility: hidden;
+  transition: visibility 0.2s;
+}
+
+.dropdown li:hover {
+  background-color: var(--c-secondary);
+}
+
+.drop:hover .dropdown {
+  visibility: visible;
+}
+
+.drop:hover .tag {
+  background-color: var(--c-secondary);
+}
+
+.tag {
+  margin: 0 1px 1px 0;
+}
+
+.legend {
+  display: inline-block;
+  padding: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.arrow {
+  border: solid var(--c-light-primary);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  transition: transform 0.2s;
+}
+
+.down {
+  transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+}

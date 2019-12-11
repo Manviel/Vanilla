@@ -1,6 +1,6 @@
 :root {
   --c-light-checkbox: #4cd964;
-  --c-light-primary: #666666;
+  --c-light-primary: #000;
   --c-light: rgba(142, 142, 147, 0.12);
   --c-dark-background: #27292d;
   --c-dark-checkbox: #007aff;
@@ -57,11 +57,4 @@
 .theme:checked + .switch::after {
   left: calc(100% - 2px);
   transform: translateX(-100%);
-}
-
-.control {
-  background: var(--c-light);
-  margin: 3px;
-  font-size: 17px;
-  padding: 10px 20px;
 }

@@ -1,3 +1,16 @@
+.title {
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.0121429em;
+  text-transform: capitalize;
+  margin-bottom: 28px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  color: #ff2d55;
+}
+
 .info {
   margin-left: 16px;
   justify-content: space-between;

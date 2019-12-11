@@ -5,8 +5,8 @@ const AutoComplete = ({ handleFilter }) => {
 
   return (
     <>
-      <dt className="search" onClick={() => setOpen(!open)}>
-        Sort
+      <dt className="flex space search" onClick={() => setOpen(!open)}>
+        Sort <i className={open ? "arrow up" : "arrow down"}></i>
       </dt>
       {open && (
         <ul className="filters">

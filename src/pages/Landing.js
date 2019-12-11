@@ -2,8 +2,8 @@ import React, { lazy, useState, useEffect, Suspense } from "react";
 import { Link } from "react-router-dom";
 
 import Loader from "../components/Loader";
-import AutoComplete from "../components/AutoComplete";
 
+const AutoComplete = lazy(() => import("../components/AutoComplete"));
 const Header = lazy(() => import("../components/Header"));
 const ShowCard = lazy(() => import("../components/ShowCard"));
 
@@ -34,8 +34,8 @@ const Landing = () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <Header handleFilter={handleFilter} showFilter />
-      <AutoComplete />
+      <Header />
+      <AutoComplete handleFilter={handleFilter} />
 
       <main className="flex container">
         {data.map(show => (
