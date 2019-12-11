@@ -1,12 +1,13 @@
 import React from "react";
 
+import Tags from "./Tags";
+
 import "../styles/albums.css";
 
 const ShowCard = ({ title }) => (
   <section className="album control">
-    <span className="category tag">Black</span>
-    <span className="category tag sub">Layers</span>
-    <strong className="teaser">{title}</strong>
+    <Tags tags={["Tops", "Bodycon"]} />
+    <strong className="teaser case">{title}</strong>
   </section>
 );
 

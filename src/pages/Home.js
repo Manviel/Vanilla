@@ -31,7 +31,7 @@ const Home = () => {
         <div className="dock">
           <span className="icon"></span>
           <Link to="/">
-            <button className="btn">Store</button>
+            <button className="btn case">Store</button>
           </Link>
         </div>
       </section>

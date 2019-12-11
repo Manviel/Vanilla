@@ -6,7 +6,7 @@ import "../styles/popup.css";
 const Popup = ({ item }) => (
   <article className="flex col">
     <section className="flex col info">
-      <h3 className="name day">Information</h3>
+      <h3 className="name case day">Information</h3>
 
       <table>
         <tbody>
@@ -15,21 +15,21 @@ const Popup = ({ item }) => (
             <th>Color</th>
           </tr>
           <tr>
-            <td className="name">{item.name}</td>
-            <td className="name">Black</td>
+            <td className="name case">{item.name}</td>
+            <td className="name case">Black</td>
           </tr>
           <tr>
             <th colSpan="2">Description</th>
           </tr>
           <tr>
-            <td colSpan="2" className="name">
+            <td colSpan="2" className="name case">
               {item.email}
             </td>
           </tr>
         </tbody>
       </table>
 
-      <h3 className="label name">Care</h3>
+      <h3 className="label name case">Care</h3>
 
       <table>
         <tbody>
@@ -38,8 +38,8 @@ const Popup = ({ item }) => (
             <th>Product code</th>
           </tr>
           <tr>
-            <td className="name">Machine wash</td>
-            <td className="name">{item.postId}</td>
+            <td className="name case">Machine wash</td>
+            <td className="name case">{item.postId}</td>
           </tr>
         </tbody>
       </table>
@@ -50,7 +50,7 @@ const Popup = ({ item }) => (
           <span className="currency">&#163;</span>
           <h6 className="price">{item.id}</h6>
         </div>
-        <span className="subtitle">Pay with Touch ID</span>
+        <span className="case">Pay with Touch ID</span>
       </button>
     </Link>
   </article>

@@ -6,10 +6,6 @@
   margin-bottom: 28px;
 }
 
-.subtitle {
-  text-transform: uppercase;
-}
-
 .info {
   padding: 15px 10px;
   justify-content: space-between;
@@ -19,7 +15,6 @@
 .name {
   font-size: 0.9rem;
   letter-spacing: 0.3em;
-  text-transform: uppercase;
   color: var(--c-light-primary);
 }
 

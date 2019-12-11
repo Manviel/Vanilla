@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 
 const Header = lazy(() => import("../components/Header"));
 const Popup = lazy(() => import("../components/Popup"));
+const Tags = lazy(() => import("../components/Tags"));
 
 import "../styles/details.css";
 
@@ -19,6 +20,7 @@ const Details = ({ match }) => {
   return (
     <Suspense fallback={<Loader />}>
       <Header />
+      <Tags tags={["Black", "Tailored", "Layers"]} />
 
       <article className="flex space container">
         <Popup item={data && data} />

@@ -15,7 +15,6 @@
 }
 
 .teaser {
-  text-transform: uppercase;
   transform: rotate(90deg);
   font-size: 20px;
   position: absolute;
@@ -29,6 +28,7 @@
 }
 
 .category {
+  display: inline-block;
   background-color: var(--c-secondary);
   color: var(--c-light-primary);
   padding: 9px;

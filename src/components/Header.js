@@ -11,16 +11,16 @@ const Header = () => {
   return (
     <header className="flex col">
       <section className="drop">
-        <span className="tag legend">Collection</span>
+        <span className="tag legend case">Collection</span>
         <ul className="flex dropdown">
-          <li className="legend">Accessories</li>
-          <li className="legend">Tops</li>
-          <li className="legend">Skirts & Trousers</li>
+          <li className="legend case">Accessories</li>
+          <li className="legend case">Tops</li>
+          <li className="legend case">Skirts & Trousers</li>
         </ul>
       </section>
 
       <nav className="flex space">
-        <Link to="/" className="main">
+        <Link to="/" className="main case">
           Today
         </Link>
         <input
