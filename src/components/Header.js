@@ -9,7 +9,7 @@ const Header = () => {
   const [theme, setTheme] = useTheme();
 
   return (
-    <header className="flex header">
+    <header className="flex col">
       <section className="drop">
         <span className="tag legend">Collection</span>
         <ul className="flex dropdown">

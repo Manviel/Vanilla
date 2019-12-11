@@ -9,19 +9,15 @@
 }
 
 .light {
-  --c-background: var(--c-dark-primary);
   --c-checkbox: var(--c-light-checkbox);
-  --c-color: var(--c-light-primary);
-  background: var(--c-background);
-  color: var(--c-color);
+  background: var(--c-dark-primary);
+  color: var(--c-light-primary);
 }
 
 .dark {
-  --c-background: var(--c-dark-background);
   --c-checkbox: var(--c-dark-checkbox);
-  --c-color: var(--c-dark-primary);
-  background: var(--c-background);
-  color: var(--c-color);
+  background: var(--c-dark-background);
+  color: var(--c-dark-primary);
 }
 
 .theme {

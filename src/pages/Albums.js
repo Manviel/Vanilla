@@ -2,17 +2,16 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 
 import { days, groupBy } from "../utils";
 
-import Payment from "../components/Payment";
 import Loader from "../components/Loader";
+import AutoComplete from "../components/AutoComplete";
+import ShowCard from "../components/ShowCard";
 
 const Header = lazy(() => import("../components/Header"));
 
 import "../styles/albums.css";
 
 const Albums = ({ match }) => {
-  const [state, setState] = useState({
-    data: []
-  });
+  const [state, setState] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -22,58 +21,48 @@ const Albums = ({ match }) => {
       .then(json => {
         const result = groupBy(json, "userId");
 
-        setState({ ...state, data: result });
+        setState(result);
       });
   }, []);
 
   const getData = value => {
     fetch(`https://api.lyrics.ovh/suggest/${value}`)
       .then(response => response.json())
-      .then(json =>
-        setState({
-          ...state
-        })
-      );
+      .then(json => setState(json));
   };
 
   const handleFilter = e => {
     const userInput = e.target.value;
 
     if (userInput.length === 0) {
-      setState({
-        ...state
-      });
+      setState(json);
     } else {
       getData(userInput);
     }
   };
 
-  const { data } = state;
-
   return (
-    <>
-      <Suspense fallback={<Loader />}>
-        <Header />
+    <Suspense fallback={<Loader />}>
+      <Header />
+      <AutoComplete handleFilter={handleFilter} />
 
-        <AutoComplete handleFilter={handleFilter} />
-      </Suspense>
-      <div className="flex header content">
-        {data.map((group, i) => (
+      <div className="flex col content">
+        {state.map((group, i) => (
           <section className="group" key={`g${i}`}>
             <h3 className="day">{i < days.length ? days[i] : "Later"}</h3>
             <article className="flex container">
               {group.map(a => (
-                <Payment key={a.id} item={a} />
+                <ShowCard key={a.id} title={a.title} />
               ))}
             </article>
           </section>
         ))}
         <section className="stats">
-          <h5 className="out">{data.length} videos</h5>
+          <h5 className="out">{state.length} videos</h5>
           <span className="out">Updated just now</span>
         </section>
       </div>
-    </>
+    </Suspense>
   );
 };
 
