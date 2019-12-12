@@ -6,7 +6,6 @@ import Loader from "./components/Loader";
 
 const Landing = lazy(() => import("./pages/Landing"));
 const Details = lazy(() => import("./pages/Details"));
-const Albums = lazy(() => import("./pages/Albums"));
 const Home = lazy(() => import("./pages/Home"));
 
 import "./styles/variables.css";
@@ -19,7 +18,6 @@ const App = () => (
       <Route exact path="/" render={props => <Landing {...props} />} />
       <Route path="/home" render={props => <Home {...props} />} />
       <Route exact path="/:id" render={props => <Details {...props} />} />
-      <Route path="/:id/albums" render={props => <Albums {...props} />} />
     </Switch>
 
     <CookieConsent

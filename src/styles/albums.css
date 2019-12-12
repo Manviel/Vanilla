@@ -1,11 +1,3 @@
-.paginate {
-  line-height: 1;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  background-color: #ffcccc;
-}
-
 .album {
   height: 355px;
   position: relative;
