@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/home.css";
-
 import { days, months } from "../utils";
+
+import "../styles/home.css";
 
 const Home = () => {
   const [time, setTime] = useState(new Date());

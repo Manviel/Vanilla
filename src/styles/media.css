@@ -1,5 +1,13 @@
-.details {
-  width: 22%;
+.cookieConsent {
+  width: 50% !important;
+  left: auto !important;
+  right: 0;
+}
+
+.cookieConsent > div {
+  flex: 0 !important;
+  margin: 28px 15px 0 15px !important;
+  letter-spacing: 0.2em;
 }
 
 .item {
@@ -7,8 +15,8 @@
 }
 
 @media screen and (max-width: 375px) {
-  .details {
-    width: 100%;
+  .cookieConsent {
+    width: 100% !important;
   }
 
   .item {

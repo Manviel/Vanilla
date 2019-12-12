@@ -1,3 +1,14 @@
+.btn {
+  background: #007aff;
+  border-radius: 23px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 8px 20px 6px;
+  transition: 0.5s;
+}
+
 .home {
   height: 93vh;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);

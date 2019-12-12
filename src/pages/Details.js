@@ -23,7 +23,7 @@ const Details = ({ match }) => {
       <Header />
       <Tags tags={["Black", "Tailored", "Layers"]} />
 
-      <article className="flex space container">
+      <article className="flex details container">
         <Popup item={data && data} />
 
         <figure className="logo"></figure>

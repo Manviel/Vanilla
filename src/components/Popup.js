@@ -11,15 +11,17 @@ const Popup = ({ item }) => (
       <table>
         <tbody>
           <tr>
-            <th>Sizes</th>
-            <th>Color</th>
+            <th className="case">Sizes</th>
+            <th className="case">Color</th>
           </tr>
           <tr>
             <td className="name case">{item.name}</td>
             <td className="name case">Black</td>
           </tr>
           <tr>
-            <th colSpan="2">Description</th>
+            <th colSpan="2" className="case">
+              Description
+            </th>
           </tr>
           <tr>
             <td colSpan="2" className="name case">
@@ -34,8 +36,8 @@ const Popup = ({ item }) => (
       <table>
         <tbody>
           <tr>
-            <th>Wash care</th>
-            <th>Product code</th>
+            <th className="case">Wash care</th>
+            <th className="case">Product code</th>
           </tr>
           <tr>
             <td className="name case">Machine wash</td>
