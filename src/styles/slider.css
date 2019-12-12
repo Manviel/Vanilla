@@ -1,0 +1,29 @@
+.slick-slider .slick-list {
+  padding: 0px !important;
+}
+
+.slide {
+  height: 100%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.above {
+  height: 27px;
+  width: 55px;
+  background-color: #ffcccc;
+  justify-content: center;
+  align-items: center;
+}
+
+.above:hover {
+  background-color: #ffbbbb;
+}
+
+.next {
+  transform: rotate(-45deg);
+}
+
+.prev {
+  transform: rotate(135deg);
+}
