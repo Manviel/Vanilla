@@ -20,15 +20,31 @@ const Details = ({ match }) => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <Header />
+      <Header
+        withImage={
+          data && data.id % 2 === 0
+            ? "https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format"
+            : "https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format"
+        }
+      />
       <Tags tags={["Black", "Tailored", "Layers"]} />
 
       <article className="flex details container">
         <Popup item={data && data} />
 
-        <figure className="logo"></figure>
+        <figure
+          style={{
+            backgroundImage: `url("https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format")`
+          }}
+          className="logo hacking day"
+        ></figure>
 
-        <figure className="logo"></figure>
+        <figure
+          style={{
+            backgroundImage: `url("https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format")`
+          }}
+          className="logo hacking day"
+        ></figure>
       </article>
 
       <MoreFrom />

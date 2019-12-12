@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/popup.css";
 
 const Popup = ({ item }) => (
-  <article className="flex col">
+  <article className="flex col day">
     <section className="flex col info">
       <h3 className="name case day">Information</h3>
 

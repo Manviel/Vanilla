@@ -37,14 +37,12 @@
 
 .logo {
   height: 355px;
-  min-width: 335px;
-  background: var(--c-light);
+  min-width: 343px;
   transition: 0.3s;
 }
 
 .logo:hover {
-  background: #fef5ec;
-  box-shadow: 0 20px 20px rgba(250, 207, 188, 0.3);
+  filter: contrast(0.8) brightness(1.15);
 }
 
 .circle {

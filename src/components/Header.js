@@ -5,11 +5,14 @@ import useTheme from "../utils/useTheme";
 
 import "../styles/header.css";
 
-const Header = () => {
+const Header = ({ withImage }) => {
   const [theme, setTheme] = useTheme();
 
   return (
-    <header className="flex col">
+    <header
+      style={{ backgroundImage: `url(${withImage})` }}
+      className={withImage ? "flex col hacking" : "flex col"}
+    >
       <section className="drop">
         <span className="tag legend case">Collection</span>
         <ul className="flex dropdown">
