@@ -19,7 +19,7 @@ const Home = () => {
   const tick = () => setTime(new Date());
 
   return (
-    <article className="home content">
+    <article className="home">
       <div className="time center">
         {time.getHours()}:
         {time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes()}

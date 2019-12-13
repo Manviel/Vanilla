@@ -21,34 +21,12 @@
   color: var(--c-light-primary);
 }
 
-.description {
-  margin-bottom: 18px;
-  min-width: 300px;
-}
-
-.rate {
-  font-size: 60px;
-}
-
-.out {
-  font-size: 15px;
-  line-height: 18px;
-}
-
 .logo {
   height: 355px;
-  min-width: 343px;
+  min-width: 342px;
   transition: 0.3s;
 }
 
 .logo:hover {
   filter: contrast(0.8) brightness(1.15);
-}
-
-.circle {
-  background: #fd8206;
-  height: 12px;
-  width: 12px;
-  margin: 8px 4px 0 0;
-  border-radius: 50%;
 }

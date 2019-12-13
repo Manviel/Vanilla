@@ -49,13 +49,13 @@ const Landing = () => {
       <Header />
       <Filters handleFilter={handleFilter} />
 
-      <main className="flex container">
+      <article className="flex container content">
         {state.data.map(show => (
           <Link key={show.id} to={`/${show.id}`} className="item">
             <ShowCard title={show.title} />
           </Link>
         ))}
-      </main>
+      </article>
     </Suspense>
   );
 };

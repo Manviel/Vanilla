@@ -40,32 +40,14 @@ const MoreFrom = () => {
   };
 
   return (
-    <article className="container">
+    <article className="container content">
       <h3 className="title case">More from Ratings & Reviews</h3>
 
       <Above handleNext={next} handlePrev={previous} />
 
       <Slider ref={slider} {...settings}>
         <div className="slide">
-          <section className="content control">
-            <h5 className="rate">
-              5.0<small className="out">out of 5</small>
-            </h5>
-
-            <div className="flex container description space">
-              <figure className="flex">
-                {[0, 1, 2, 3, 4].map(i => (
-                  <div key={i} className="circle"></div>
-                ))}
-              </figure>
-              <figcaption>Stunning!</figcaption>
-            </div>
-
-            <p>
-              This application is wonderful. Like video games and news about
-              technologies
-            </p>
-          </section>
+          <ShowCard title="Stunning!" />
         </div>
 
         <div className="slide">

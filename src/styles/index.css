@@ -21,10 +21,11 @@ ul {
 
 .flex {
   display: flex;
+  position: relative;
 }
 
 .content {
-  padding: 16px;
+  margin: 0 16px;
 }
 
 .day {

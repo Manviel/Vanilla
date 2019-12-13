@@ -12,10 +12,13 @@ const Header = ({ withImage }) => {
   const handleBurger = () => setMenu(!menu);
 
   return (
-    <header
-      style={{ backgroundImage: `url(${withImage})` }}
-      className={withImage ? "flex col hacking" : "flex col"}
-    >
+    <header className="flex col">
+      {withImage && (
+        <aside
+          className="hacking layout"
+          style={{ backgroundImage: `url(${withImage}` }}
+        ></aside>
+      )}
       <main className={menu ? "mobile" : "flex nav"}>
         <div
           className={menu ? "burger change" : "burger"}
@@ -26,7 +29,7 @@ const Header = ({ withImage }) => {
           <div className="bar3"></div>
         </div>
 
-        <section className={!menu ? "drop" : "hide"}>
+        <section className={menu ? "hide" : "drop"}>
           <span className="tag legend case">Collection</span>
           <ul className={menu ? "flex col" : "flex dropdown"}>
             <li className="legend case">Accessories</li>
@@ -35,7 +38,7 @@ const Header = ({ withImage }) => {
           </ul>
         </section>
 
-        <section className={!menu ? "drop" : "hide"}>
+        <section className={menu ? "hide" : "drop"}>
           <span className="tag legend case">Tags</span>
           <ul className={menu ? "flex col" : "flex dropdown"}>
             <li className="legend case">Denim</li>
@@ -45,7 +48,7 @@ const Header = ({ withImage }) => {
         </section>
       </main>
 
-      <nav className="flex space">
+      <nav className="flex space content">
         <Link to="/" className="main case">
           Today
         </Link>

@@ -4,7 +4,8 @@
 
 .nav {
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 34px;
+  margin: 16px;
 }
 
 .drop {
@@ -31,6 +32,7 @@
 
 .tag {
   margin: 1px 1px 1px 0;
+  position: relative;
 }
 
 .legend {
@@ -54,6 +56,14 @@
   transform: rotate(-135deg);
 }
 
+.layout {
+  height: 215px;
+  width: 100%;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+}
+
 .hacking {
   background-size: cover;
   background-position: center;
@@ -62,8 +72,6 @@
 .burger {
   display: none;
   cursor: pointer;
-  margin: 8px 8px 11px;
-  background-color: var(--c-dark-primary);
 }
 
 .bar1,
@@ -74,6 +82,10 @@
   background-color: var(--c-light-primary);
   margin-top: 2px;
   transition: 0.4s;
+}
+
+.change {
+  margin: 16px 16px 11px;
 }
 
 .change .bar1 {
@@ -90,7 +102,7 @@
 
 .mobile {
   height: 100%;
-  width: 95%;
+  width: 100%;
   position: fixed;
   z-index: 1;
   background-color: var(--c-dark-primary);
@@ -98,10 +110,11 @@
 
 .hide {
   visibility: visible;
+  margin-left: 8px;
   color: var(--c-light-primary);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   .burger {
     display: inline-block;
   }

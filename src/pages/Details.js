@@ -27,9 +27,11 @@ const Details = ({ match }) => {
             : "https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format"
         }
       />
-      <Tags tags={["Black", "Tailored", "Layers"]} />
+      <section className="content">
+        <Tags tags={["Black", "Tailored", "Layers"]} />
+      </section>
 
-      <article className="flex details container">
+      <article className="flex details container content">
         <Popup item={data && data} />
 
         <figure
