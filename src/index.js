@@ -6,9 +6,12 @@ import App from "./App";
 
 import { Store } from "./utils/context";
 
+import ScrollToTop from "./utils/ScrollToTop";
+
 ReactDOM.render(
   <Store>
     <BrowserRouter>
+      <ScrollToTop />
       <App />
     </BrowserRouter>
   </Store>,
