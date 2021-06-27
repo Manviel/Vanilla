@@ -6,41 +6,52 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "index_bundle.js",
-    publicPath: "/"
+    publicPath: "/",
+  },
+  devServer: {
+    port: 3000,
+    watchContentBase: true,
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         loader: "file-loader",
         options: {
-          name: "[path][name].[ext]"
-        }
+          name: "[path][name].[ext]",
+        },
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-        loader: "url-loader?limit=30000&name=[name]-[hash].[ext]"
-      }
-    ]
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+    ],
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       favicon: "./src/assets/icon.png",
-      template: "./src/index.html"
-    })
-  ]
+      template: "./src/index.html",
+    }),
+  ],
 };
