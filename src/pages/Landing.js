@@ -18,11 +18,11 @@ const Landing = () => {
 
   const getData = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json())
-      .then(json => dispatch({ type: "update", payload: json }));
+      .then((response) => response.json())
+      .then((json) => dispatch({ type: "update", payload: json }));
   };
 
-  const handleFilter = query => {
+  const handleFilter = (query) => {
     if (query === "asc") {
       const result = state.data.sort((a, b) =>
         a.id > b.id ? 1 : b.id > a.id ? -1 : 0
@@ -49,13 +49,13 @@ const Landing = () => {
       <Header />
       <Filters handleFilter={handleFilter} />
 
-      <article className="flex container content">
-        {state.data.map(show => (
+      <main className="flex container">
+        {state.data.map((show) => (
           <Link key={show.id} to={`/${show.id}`} className="item">
             <ShowCard title={show.title} />
           </Link>
         ))}
-      </article>
+      </main>
     </Suspense>
   );
 };

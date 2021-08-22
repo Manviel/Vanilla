@@ -33,14 +33,14 @@ const MoreFrom = () => {
       {
         breakpoint: 768,
         settings: {
-          centerMode: false
-        }
-      }
-    ]
+          centerMode: false,
+        },
+      },
+    ],
   };
 
   return (
-    <article className="container content">
+    <article className="container">
       <h3 className="title case">More from Ratings & Reviews</h3>
 
       <Above handleNext={next} handlePrev={previous} />

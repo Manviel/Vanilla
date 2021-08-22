@@ -5,7 +5,7 @@ import useTheme from "../utils/useTheme";
 
 import "../styles/header.css";
 
-const Header = ({ withImage }) => {
+const Header = () => {
   const [theme, setTheme] = useTheme();
   const [menu, setMenu] = useState(false);
 
@@ -13,13 +13,7 @@ const Header = ({ withImage }) => {
 
   return (
     <header className="flex col">
-      {withImage && (
-        <aside
-          className="hacking layout"
-          style={{ backgroundImage: `url(${withImage}` }}
-        ></aside>
-      )}
-      <main className={menu ? "mobile" : "flex nav"}>
+      <nav className={menu ? "mobile" : "flex nav"} tabIndex="0">
         <div
           className={menu ? "burger change" : "burger"}
           onClick={handleBurger}
@@ -29,26 +23,50 @@ const Header = ({ withImage }) => {
           <div className="bar3"></div>
         </div>
 
-        <section className={menu ? "hide" : "drop"}>
-          <span className="tag legend case">Collection</span>
+        <section className={menu ? "hide" : "drop"} tabIndex="0">
+          <h1 className="tag legend case">Sale</h1>
           <ul className={menu ? "flex col" : "flex dropdown"}>
-            <li className="legend case">Accessories</li>
-            <li className="legend case">Tops</li>
-            <li className="legend case">Skirts & Trousers</li>
+            <li className="legend case" tabIndex="0">
+              Trending
+            </li>
+            <li className="legend case" tabIndex="0">
+              Brands
+            </li>
           </ul>
         </section>
 
-        <section className={menu ? "hide" : "drop"}>
-          <span className="tag legend case">Tags</span>
+        <section className={menu ? "hide" : "drop"} tabIndex="0">
+          <h2 className="tag legend case">Collection</h2>
           <ul className={menu ? "flex col" : "flex dropdown"}>
-            <li className="legend case">Denim</li>
-            <li className="legend case">Identity</li>
-            <li className="legend case">Colour</li>
+            <li className="legend case" tabIndex="0">
+              Accessories
+            </li>
+            <li className="legend case" tabIndex="0">
+              Tops
+            </li>
+            <li className="legend case" tabIndex="0">
+              Skirts & Trousers
+            </li>
           </ul>
         </section>
-      </main>
 
-      <nav className="flex space content">
+        <section className={menu ? "hide" : "drop"} tabIndex="0">
+          <h2 className="tag legend case">Tags</h2>
+          <ul className={menu ? "flex col" : "flex dropdown"}>
+            <li className="legend case" tabIndex="0">
+              Denim
+            </li>
+            <li className="legend case" tabIndex="0">
+              Identity
+            </li>
+            <li className="legend case" tabIndex="0">
+              Colour
+            </li>
+          </ul>
+        </section>
+      </nav>
+
+      <section className="flex space">
         <Link to="/" className="main case">
           Today
         </Link>
@@ -60,7 +78,7 @@ const Header = ({ withImage }) => {
           onChange={setTheme}
         />
         <label htmlFor="switch" className="switch"></label>
-      </nav>
+      </section>
     </header>
   );
 };

@@ -1,12 +1,11 @@
-.cookieConsent {
+.CookieConsent {
   width: 50% !important;
   left: auto !important;
   right: 0;
 }
 
-.cookieConsent > div {
+.CookieConsent > div {
   flex: 0 !important;
-  margin: 28px 15px 0 15px !important;
   letter-spacing: 0.2em;
 }
 
@@ -15,7 +14,7 @@
 }
 
 @media screen and (max-width: 414px) {
-  .cookieConsent {
+  .CookieConsent {
     width: 100% !important;
   }
 

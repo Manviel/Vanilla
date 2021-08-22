@@ -19,13 +19,14 @@ ul {
   list-style-type: none;
 }
 
+body {
+  font-size: 1.4rem;
+  margin: 1.6rem;
+}
+
 .flex {
   display: flex;
   position: relative;
-}
-
-.content {
-  margin: 0 16px;
 }
 
 .day {
@@ -35,11 +36,11 @@ ul {
 .case {
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  padding: 1.4rem;
 }
 
 .main {
   font-size: 34px;
-  padding: 0.2em 0.4em;
   background-color: var(--c-secondary);
   color: var(--c-light-primary);
 }
@@ -50,10 +51,15 @@ ul {
 }
 
 .search {
-  padding: 1.5em;
+  font-size: 1.4rem;
   background-color: #ffcccc;
-  width: 115px;
   color: var(--c-light-primary);
+}
+
+.main,
+.search {
+  max-width: 18rem;
+  width: 100%;
 }
 
 .search:hover {

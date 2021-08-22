@@ -7,10 +7,10 @@
 
 .teaser {
   transform: rotate(90deg);
-  font-size: 20px;
+  font-size: 1.8rem;
   position: absolute;
-  top: 164px;
-  right: -190px;
+  top: 150px;
+  right: -200px;
   width: 350px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -23,7 +23,7 @@
   background-color: var(--c-secondary);
   color: var(--c-light-primary);
   padding: 9px;
-  font-size: 9px;
+  font-size: 1.2rem;
 }
 
 .sub {

@@ -14,36 +14,29 @@ const Details = ({ match }) => {
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/comments/${match.params.id}`)
-      .then(response => response.json())
-      .then(json => setData(json));
+      .then((response) => response.json())
+      .then((json) => setData(json));
   }, []);
 
   return (
     <Suspense fallback={<Loader />}>
-      <Header
-        withImage={
-          data && data.id % 2 === 0
-            ? "https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format"
-            : "https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format"
-        }
-      />
-      <section className="content">
-        <Tags tags={["Black", "Tailored", "Layers"]} />
-      </section>
+      <Header />
 
-      <article className="flex details container content">
+      <Tags tags={["Black", "Tailored", "Layers"]} />
+
+      <article className="flex details container">
         <Popup item={data && data} />
 
         <figure
           style={{
-            backgroundImage: `url("https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format")`
+            backgroundImage: `url("https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format")`,
           }}
           className="logo hacking day"
         ></figure>
 
         <figure
           style={{
-            backgroundImage: `url("https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format")`
+            backgroundImage: `url("https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format")`,
           }}
           className="logo hacking day"
         ></figure>

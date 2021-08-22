@@ -3,27 +3,17 @@
 }
 
 .nav {
-  position: relative;
   padding-bottom: 34px;
-  margin: 16px;
+  margin-bottom: 3px;
 }
 
 .drop {
   visibility: visible;
 }
 
-.dropdown {
-  position: absolute;
-  left: 0;
-  visibility: hidden;
-}
-
-.dropdown li:hover {
+.dropdown li:hover,
+.dropdown li:focus {
   background-color: var(--c-secondary);
-}
-
-.drop:hover .dropdown {
-  visibility: visible;
 }
 
 .drop:hover .tag {
@@ -31,13 +21,14 @@
 }
 
 .tag {
+  font-size: 1.4rem;
   margin: 1px 1px 1px 0;
   position: relative;
 }
 
 .legend {
   display: inline-block;
-  padding: 1em;
+  padding: 1rem;
 }
 
 .arrow {
@@ -56,14 +47,6 @@
   transform: rotate(-135deg);
 }
 
-.layout {
-  height: 215px;
-  width: 100%;
-  z-index: 0;
-  position: absolute;
-  top: 0;
-}
-
 .hacking {
   background-size: cover;
   background-position: center;
@@ -72,6 +55,8 @@
 .burger {
   display: none;
   cursor: pointer;
+  background-color: var(--c-secondary);
+  padding: 8px;
 }
 
 .bar1,
@@ -79,17 +64,21 @@
 .bar3 {
   width: 20px;
   height: 2px;
-  background-color: var(--c-light-primary);
-  margin-top: 2px;
+  background-color: var(--c-dark-background);
   transition: 0.4s;
 }
 
+.bar2,
+.bar3 {
+  margin-top: 4px;
+}
+
 .change {
-  margin: 16px 16px 11px;
+  margin: 16px 0 11px;
 }
 
 .change .bar1 {
-  transform: rotate(-45deg) translate(-4px, 6px);
+  transform: rotate(-45deg) translate(-5px, 5px);
 }
 
 .change .bar2 {
@@ -97,20 +86,23 @@
 }
 
 .change .bar3 {
-  transform: rotate(45deg) translate(0px, -2px);
+  transform: rotate(45deg) translate(-3px, -4px);
 }
 
 .mobile {
   height: 100%;
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1;
+  padding: 0 1.6rem;
   background-color: var(--c-dark-primary);
 }
 
 .hide {
   visibility: visible;
-  margin-left: 8px;
+  margin-left: -1rem;
   color: var(--c-light-primary);
 }
 
@@ -120,6 +112,6 @@
   }
 
   .drop {
-    visibility: hidden;
+    display: none;
   }
 }
