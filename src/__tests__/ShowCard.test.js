@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, render } from "enzyme";
 
 import ShowCard from "../components/ShowCard";
 import Tags from "../components/Tags";
@@ -16,7 +16,7 @@ describe("ShowCard page", () => {
   });
 
   it("should render tags", () => {
-    const wrapper = shallow(<Tags tags={["Samurai"]} />);
-    expect(wrapper.find("span").length).toBe(1);
+    const wrapper = render(<Tags tags={["Samurai"]} />);
+    expect(wrapper).toMatchSnapshot();
   });
 });

@@ -9,14 +9,14 @@ const Home = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    let timerID = setInterval(() => tick(), 1000);
+    const tick = () => setTime(new Date());
+
+    const timerID = setInterval(() => tick(), 1000);
 
     return () => {
       clearInterval(timerID);
     };
   });
-
-  const tick = () => setTime(new Date());
 
   return (
     <article className="home">
