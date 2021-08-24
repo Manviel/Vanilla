@@ -23,9 +23,7 @@ table td {
   color: var(--c-dark-primary);
   line-height: 1;
   padding: 10px;
-  border: none;
   width: 100%;
-  cursor: pointer;
 }
 
 .price {

@@ -1,19 +1,16 @@
 .btn {
   background: #007aff;
   border-radius: 23px;
-  border: none;
   color: #fff;
   font-size: 16px;
   line-height: 19px;
   padding: 8px 20px 6px;
-  transition: 0.5s;
 }
 
 .home {
-  height: 100vh;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  height: calc(100vh - 3.2rem);
+  background-color: var(--c-light);
   background-size: 400% 400%;
-  animation: gradient-bg 15s ease infinite;
 }
 
 .blur {
@@ -62,13 +59,11 @@
 }
 
 .time {
-  color: #ffffff;
   letter-spacing: -0.083705px;
   font-size: 80px;
 }
 
 .date {
-  color: #ffffff;
   font-size: 22px;
   line-height: 26px;
   letter-spacing: 0.32px;
@@ -76,26 +71,4 @@
 
 .center {
   text-align: center;
-}
-
-.line {
-  background: #000000;
-  border-radius: 100px;
-  width: 135px;
-  height: 5px;
-  position: absolute;
-  left: calc(50% - 70px);
-  bottom: 12px;
-}
-
-@keyframes gradient-bg {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

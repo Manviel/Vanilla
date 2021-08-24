@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/popup.css";
 
 const Popup = ({ item }) => (
-  <article className="flex col day">
+  <article className="flex col">
     <section className="flex col info">
       <h3 className="name case day">Information</h3>
 
@@ -46,6 +46,7 @@ const Popup = ({ item }) => (
         </tbody>
       </table>
     </section>
+
     <Link to="/home">
       <button className="flex space buy">
         <div className="flex">

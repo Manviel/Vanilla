@@ -31,14 +31,14 @@ const Details = ({ match }) => {
           style={{
             backgroundImage: `url("https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format")`,
           }}
-          className="logo hacking day"
+          className="logo hacking"
         ></figure>
 
         <figure
           style={{
             backgroundImage: `url("https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format")`,
           }}
-          className="logo hacking day"
+          className="logo hacking"
         ></figure>
       </article>
 

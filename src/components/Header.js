@@ -14,14 +14,14 @@ const Header = () => {
   return (
     <header className="flex col">
       <nav className={menu ? "mobile" : "flex nav"} tabIndex="0">
-        <div
+        <button
           className={menu ? "burger change" : "burger"}
           onClick={handleBurger}
         >
           <div className="bar1"></div>
           <div className="bar2"></div>
           <div className="bar3"></div>
-        </div>
+        </button>
 
         <section className={menu ? "hide" : "drop"} tabIndex="0">
           <h1 className="tag legend case">Sale</h1>

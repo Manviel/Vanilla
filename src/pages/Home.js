@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     let timerID = setInterval(() => tick(), 1000);
 
-    return function cleanup() {
+    return () => {
       clearInterval(timerID);
     };
   });
@@ -20,13 +20,14 @@ const Home = () => {
 
   return (
     <article className="home">
-      <div className="time center">
+      <h1 className="date center case">Welcome back</h1>
+      <h2 className="time center">
         {time.getHours()}:
         {time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes()}
-      </div>
-      <div className="date center">
+      </h2>
+      <h3 className="date center">
         {days[time.getDay()]}, {time.getDate()} {months[time.getMonth()]}
-      </div>
+      </h3>
       <section className="blur">
         <div className="dock">
           <span className="icon"></span>
@@ -35,9 +36,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <Link to="/">
-        <div className="line"></div>
-      </Link>
     </article>
   );
 };

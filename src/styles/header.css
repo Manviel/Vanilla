@@ -11,6 +11,10 @@
   visibility: visible;
 }
 
+.dropdown {
+  font-size: 1.2rem;
+}
+
 .dropdown li:hover,
 .dropdown li:focus {
   background-color: var(--c-secondary);
@@ -48,13 +52,13 @@
 }
 
 .hacking {
+  margin-top: 0.8rem;
   background-size: cover;
   background-position: center;
 }
 
 .burger {
   display: none;
-  cursor: pointer;
   background-color: var(--c-secondary);
   padding: 8px;
 }

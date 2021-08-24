@@ -24,6 +24,11 @@ body {
   margin: 1.6rem;
 }
 
+button {
+  cursor: pointer;
+  border: 0;
+}
+
 .flex {
   display: flex;
   position: relative;
