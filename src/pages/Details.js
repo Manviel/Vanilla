@@ -12,6 +12,8 @@ import "../styles/details.css";
 const Details = ({ match }) => {
   const [data, setData] = useState({});
 
+  const options = `w=540&h=960&q=50&auto=format`;
+
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/comments/${match.params.id}`)
       .then((response) => response.json())
@@ -24,22 +26,22 @@ const Details = ({ match }) => {
 
       <Tags tags={["Black", "Tailored", "Layers"]} />
 
-      <article className="flex details container">
-        <Popup item={data && data} />
+      <article className="flex details">
+        <Popup item={data} />
 
-        <figure
-          style={{
-            backgroundImage: `url("https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?w=1080&h=1920&fit=max&auto=format")`,
-          }}
-          className="logo hacking"
-        ></figure>
+        {data.id && (
+          <figure
+            style={{
+              backgroundImage:
+                data.id % 2 === 0
+                  ? `url(https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?${options})`
+                  : `url(https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?${options})`,
+            }}
+            className="logo hacking"
+          ></figure>
+        )}
 
-        <figure
-          style={{
-            backgroundImage: `url("https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?w=1080&h=1920&fit=max&auto=format")`,
-          }}
-          className="logo hacking"
-        ></figure>
+        <p className="logo">{data.body}</p>
       </article>
 
       <MoreFrom />

@@ -51,12 +51,6 @@
   transform: rotate(-135deg);
 }
 
-.hacking {
-  margin-top: 0.8rem;
-  background-size: cover;
-  background-position: center;
-}
-
 .burger {
   display: none;
   background-color: var(--c-secondary);

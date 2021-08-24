@@ -31,7 +31,7 @@ const Popup = ({ item }) => (
         </tbody>
       </table>
 
-      <h3 className="label name case">Care</h3>
+      <h3 className="name case day">Care</h3>
 
       <table>
         <tbody>
@@ -51,9 +51,9 @@ const Popup = ({ item }) => (
       <button className="flex space buy">
         <div className="flex">
           <span className="currency">&#163;</span>
-          <h6 className="price">{item.id}</h6>
+          <h4 className="price">{item.id}</h4>
         </div>
-        <span className="case">Pay with Touch ID</span>
+        <h5 className="case">Pay with Touch ID</h5>
       </button>
     </Link>
   </article>
