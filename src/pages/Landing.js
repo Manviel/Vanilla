@@ -17,9 +17,11 @@ const Landing = () => {
   }, []);
 
   const getData = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => dispatch({ type: "update", payload: json }));
+    if (state.data.length === 0) {
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => response.json())
+        .then((json) => dispatch({ type: "update", payload: json }));
+    }
   };
 
   const handleFilter = (query) => {
