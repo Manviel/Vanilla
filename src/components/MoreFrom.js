@@ -1,13 +1,13 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
+import React, { useRef } from 'react';
+import Slider from 'react-slick';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import ShowCard from "./ShowCard";
-import Above from "./Above";
+import ShowCard from './ShowCard';
+import Above from './Above';
 
-import "../styles/slider.css";
+import '../styles/slider.css';
 
 const MoreFrom = () => {
   const slider = useRef();
@@ -40,22 +40,22 @@ const MoreFrom = () => {
   };
 
   return (
-    <article className="container">
-      <h3 className="title case">More from Ratings & Reviews</h3>
+    <article className='container'>
+      <h3 className='title case'>More from Ratings & Reviews</h3>
 
       <Above handleNext={next} handlePrev={previous} />
 
       <Slider ref={slider} {...settings}>
-        <div className="slide">
-          <ShowCard title="Stunning!" />
+        <div className='slide'>
+          <ShowCard title='Stunning!' price='38.99' />
         </div>
 
-        <div className="slide">
-          <ShowCard title="Kharkiv student" />
+        <div className='slide'>
+          <ShowCard title='Kharkiv student' price='32.99' />
         </div>
 
-        <div className="slide">
-          <ShowCard title="Merezhko Michael" />
+        <div className='slide'>
+          <ShowCard title='Merezhko Michael' price='14.99' />
         </div>
       </Slider>
     </article>
