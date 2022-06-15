@@ -31,8 +31,10 @@
 
 .hacking {
   min-height: 30rem;
-  background-size: cover;
-  background-position: center;
+  padding: 1.5rem 1rem;
+  color: var(--c-dark-primary);
+  margin: 4rem 1rem;
+  width: 40vw;
 }
 
 .logo:hover {
@@ -42,5 +44,9 @@
 @media screen and (max-width: 414px) {
   .details {
     flex-wrap: wrap;
+  }
+
+  .hacking {
+    width: 100%;
   }
 }

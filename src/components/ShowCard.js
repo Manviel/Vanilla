@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import Tags from "./Tags";
+import Tags from './Tags';
 
-import "../styles/albums.css";
+import '../styles/albums.css';
 
-const ShowCard = ({ title }) => (
-  <section className="album control">
-    <Tags tags={["Tops", "Bodycon"]} />
-    <strong className="teaser case">{title}</strong>
+const ShowCard = ({ title, price }) => (
+  <section className='album control'>
+    <Tags tags={['Tops', 'Bodycon']} />
+    <p className='case'>&#163; {price}</p>
+    <strong className='teaser case'>{title}</strong>
   </section>
 );
 

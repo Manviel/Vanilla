@@ -1,21 +1,22 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useParams } from 'react-router-dom';
 
-import Loader from "../components/Loader";
+import Loader from '../components/Loader';
 
-const Header = lazy(() => import("../components/Header"));
-const Popup = lazy(() => import("../components/Popup"));
-const Tags = lazy(() => import("../components/Tags"));
-const MoreFrom = lazy(() => import("../components/MoreFrom"));
+const Header = lazy(() => import('../components/Header'));
+const Popup = lazy(() => import('../components/Popup'));
+const Tags = lazy(() => import('../components/Tags'));
+const MoreFrom = lazy(() => import('../components/MoreFrom'));
 
-import "../styles/details.css";
+import '../styles/details.css';
 
-const Details = ({ match }) => {
+const Details = () => {
   const [data, setData] = useState({});
 
-  const options = `w=540&h=960&q=50&auto=format`;
+  const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/comments/${match.params.id}`)
+    fetch(`https://jsonplaceholder.typicode.com/comments/${id}`)
       .then((response) => response.json())
       .then((json) => setData(json));
   }, []);
@@ -24,24 +25,31 @@ const Details = ({ match }) => {
     <Suspense fallback={<Loader />}>
       <Header />
 
-      <Tags tags={["Black", "Tailored", "Layers"]} />
+      <Tags tags={['Black', 'Tailored', 'Layers']} />
 
-      <article className="flex details">
+      <article className='flex details'>
         <Popup item={data} />
 
-        {data.id && (
-          <figure
+        {data.id ? (
+          <div
             style={{
-              backgroundImage:
-                data.id % 2 === 0
-                  ? `url(https://collusion.imgix.net/1994122dd9c24ae294a294d223f27ec7.jpg?${options})`
-                  : `url(https://collusion.imgix.net/eb64dc5189454ac187911953d005d818.jpg?${options})`,
+              backgroundColor: data.id % 2 === 0 ? '#2d2d2d' : '#FF385C',
             }}
-            className="logo hacking"
-          ></figure>
+            className='hacking'
+          >
+            <h6 className='case'>ABOUT ME</h6>
+
+            <p className='case'>{data.email}</p>
+          </div>
+        ) : (
+          <Loader />
         )}
 
-        <p className="logo">{data.body}</p>
+        <div>
+          <strong className='case'>Description</strong>
+
+          <p className='logo case'>{data.body}</p>
+        </div>
       </article>
 
       <MoreFrom />
