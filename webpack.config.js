@@ -1,16 +1,17 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "index_bundle.js",
-    publicPath: "/",
+    path: path.join(__dirname, '/dist'),
+    filename: 'index_bundle.js',
+    publicPath: '/',
   },
   devServer: {
     port: 3000,
     watchContentBase: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -18,25 +19,25 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[path][name].[ext]",
+          name: '[path][name].[ext]',
         },
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
               limit: 8192,
             },
@@ -45,13 +46,10 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    historyApiFallback: true,
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: "./src/assets/icon.png",
-      template: "./src/index.html",
+      favicon: './src/assets/icon.png',
+      template: './src/index.html',
     }),
   ],
 };
