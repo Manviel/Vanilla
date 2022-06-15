@@ -24,18 +24,22 @@ const Landing = () => {
     }
   };
 
+  const reverseComparison = (first, last) => (first.id < last.id ? -1 : 0);
+
+  const sortByDefault = (first, last, key) => (first[key] > last[key] ? -1 : 0);
+
   const handleFilter = (query) => {
     if (query === 'asc') {
       return state.data.sort((a, b) =>
-        a.id > b.id ? 1 : b.id > a.id ? -1 : 0
+        a.id > b.id ? 1 : sortByDefault(b, a, 'id')
       );
     } else if (query === 'desc') {
       return state.data.sort((a, b) =>
-        a.id < b.id ? 1 : b.id < a.id ? -1 : 0
+        a.id < b.id ? 1 : reverseComparison(b, a)
       );
     } else {
       return state.data.sort((a, b) =>
-        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+        a.title > b.title ? 1 : sortByDefault(b, a, 'title')
       );
     }
   };
