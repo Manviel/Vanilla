@@ -31,8 +31,10 @@
 
 .hacking {
   min-height: 30rem;
-  background-size: cover;
-  background-position: center;
+  padding: 1.5rem 1rem;
+  color: var(--c-dark-primary);
+  margin: 4rem 1rem;
+  width: 100%;
 }
 
 .logo:hover {
