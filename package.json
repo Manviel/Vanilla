@@ -24,7 +24,6 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
@@ -38,7 +37,6 @@
   },
   "dependencies": {
     "@types/jest": "^28.1.1",
-    "enzyme": "^3.11.0",
     "jest": "^28.1.1",
     "react": "^18.2.0",
     "react-cookie-consent": "^7.4.1",
