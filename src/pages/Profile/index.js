@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import CookieConsent from 'react-cookie-consent';
 
-import { days, months } from '../utils';
+import { days, months } from '../../utils';
 
-import { DataContext } from '../utils/context';
+import { DataContext } from '../../utils/context';
 
-import '../styles/home.css';
+import './home.css';
 
-const Home = () => {
+const Profile = () => {
   const [time, setTime] = useState(new Date());
 
   const { state, dispatch } = useContext(DataContext);
@@ -72,8 +73,40 @@ const Home = () => {
           </Link>
         </div>
       </section>
+
+      <CookieConsent
+        location='bottom'
+        buttonText='Close'
+        style={{
+          background: '#aeffc5',
+          color: '#000',
+          textTransform: 'uppercase',
+          lineHeight: '1.7em',
+          flexDirection: 'column',
+        }}
+        buttonStyle={{
+          background: '#303030',
+          color: '#fff',
+          fontSize: '10px',
+          textTransform: 'uppercase',
+          padding: '1.2em',
+        }}
+        expires={150}
+      >
+        Cookie use
+        <br />
+        This website uses cookies to enhance the user experience. If you
+        continue, we assume that you consent to receive all cookies.{' '}
+        <a
+          href='https://www.cookiebot.com/en/cookie-banner/'
+          style={{ textDecoration: 'underline' }}
+          target='_blank'
+        >
+          More info
+        </a>
+      </CookieConsent>
     </article>
   );
 };
 
-export default Home;
+export default Profile;

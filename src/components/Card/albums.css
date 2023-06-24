@@ -1,0 +1,12 @@
+.paper {
+  background-color: var(--c-active);
+  text-transform: uppercase;
+}
+
+.case {
+  text-transform: capitalize;
+}
+
+.quick {
+  gap: var(--s-finger);
+}

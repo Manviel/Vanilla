@@ -1,14 +1,14 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loader from '../components/Loader';
+import Loader from '../../components/Loader';
 
-const Header = lazy(() => import('../components/Header'));
-const Popup = lazy(() => import('../components/Popup'));
-const Tags = lazy(() => import('../components/Tags'));
-const MoreFrom = lazy(() => import('../components/MoreFrom'));
+const Header = lazy(() => import('../../components/Header'));
+const Popup = lazy(() => import('../../components/Popup'));
+const Tags = lazy(() => import('../../components/Tags'));
+const MoreFrom = lazy(() => import('../../components/MoreFrom'));
 
-import '../styles/details.css';
+import './details.css';
 
 const Details = () => {
   const [data, setData] = useState({});

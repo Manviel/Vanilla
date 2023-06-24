@@ -1,15 +1,13 @@
-import React, { lazy, useContext, useEffect, Suspense } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import Loader from '../components/Loader';
+import PageDecorator from '../../components/PageDecorator';
+import Filters from '../../components/Filters';
+import ShowCard from '../../components/Card/ShowCard';
 
-import { DataContext } from '../utils/context';
+import { DataContext } from '../../utils/context';
 
-const Filters = lazy(() => import('../components/Filters'));
-const Header = lazy(() => import('../components/Header'));
-const ShowCard = lazy(() => import('../components/ShowCard'));
-
-const Landing = () => {
+const Home = () => {
   const { state, dispatch } = useContext(DataContext);
 
   useEffect(() => {
@@ -48,19 +46,22 @@ const Landing = () => {
     dispatch({ type: 'update', payload: handleFilter(result) });
 
   return (
-    <Suspense fallback={<Loader />}>
-      <Header />
+    <PageDecorator subtitle='Home' headline='Collection'>
       <Filters handleFilter={handleResult} />
 
-      <main className='flex container'>
+      <div className='flex col quick'>
         {state.data.map((show) => (
-          <Link key={show.id} to={`/${show.id}`} className='item'>
+          <Link
+            key={show.id}
+            to={`/${show.id}`}
+            className='material view rounded'
+          >
             <ShowCard title={show.title} price={show.id} />
           </Link>
         ))}
-      </main>
-    </Suspense>
+      </div>
+    </PageDecorator>
   );
 };
 
-export default Landing;
+export default Home;
