@@ -26,25 +26,12 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
-      },
-      {
-        test: /\.(eot|woff|woff2|ttf|png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
+        test: /\.png/,
+        type: 'asset/resource',
       },
       {
         test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack'],
       },
     ],

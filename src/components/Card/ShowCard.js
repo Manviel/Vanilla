@@ -9,8 +9,8 @@ const ShowCard = ({ title, price }) => (
     <Tags tags={['New']} />
 
     <h3 className='subtitle case card-measure'>{title}</h3>
-    <p className='info card-sub'>Coats & jackets</p>
-    <p className='info'>&#163; {price}</p>
+    <h4 className='info card-sub grey-dark'>Coats & jackets</h4>
+    <p className='info'>Cost: &#163; {price}</p>
   </article>
 );
 
