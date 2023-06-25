@@ -1,9 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 
-import FlameIcon from './assets/icons/flame.svg';
-import SquareTextIcon from './assets/icons/square-text.svg';
-import TextFinderIcon from './assets/icons/text-finder.svg';
+import { SquareTextIcon, TextFinderIcon } from './assets/svg';
 
 import Loader from './components/Loader';
 
@@ -27,14 +25,6 @@ const App = () => (
         className={ActionTypes.SuperEllipse}
       >
         <SquareTextIcon />
-      </Link>
-
-      <Link
-        to={Paths.Profile}
-        aria-label='Products'
-        className={ActionTypes.SuperEllipse}
-      >
-        <FlameIcon />
       </Link>
 
       <Link
