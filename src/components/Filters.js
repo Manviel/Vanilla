@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { ActionTypes } from '../utils/models';
 
 const Filters = ({ handleFilter }) => {
   const [open, setOpen] = useState(false);
 
   const handleSubmit = () => setOpen(!open);
-
-  const handleKeypress = (e) => {
-    if (e.which === 13) {
-      handleSubmit();
-    }
-  };
 
   const handleFilterChange = (e, field) => {
     if (e.which === 13) {
@@ -20,37 +15,36 @@ const Filters = ({ handleFilter }) => {
 
   return (
     <>
-      <h3
-        className="flex space search case"
+      <button
+        type='button'
+        className={ActionTypes.Secondary}
         onClick={handleSubmit}
-        onKeyPress={handleKeypress}
-        tabIndex="0"
       >
-        Sort <i className={open ? "arrow up" : "arrow down"}></i>
-      </h3>
+        Sort <i className={open ? 'arrow up' : 'arrow down'}></i>
+      </button>
       {open && (
-        <ul className="filters">
+        <ul className='filters'>
           <li
-            className="search case"
-            onClick={() => handleFilter("date")}
-            onKeyPress={(e) => handleFilterChange(e, "date")}
-            tabIndex="0"
+            className='search case'
+            onClick={() => handleFilter('date')}
+            onKeyPress={(e) => handleFilterChange(e, 'date')}
+            tabIndex='0'
           >
             Latest
           </li>
           <li
-            className="search case"
-            onClick={() => handleFilter("asc")}
-            onKeyPress={(e) => handleFilterChange(e, "asc")}
-            tabIndex="0"
+            className='search case'
+            onClick={() => handleFilter('asc')}
+            onKeyPress={(e) => handleFilterChange(e, 'asc')}
+            tabIndex='0'
           >
             Lowest priced
           </li>
           <li
-            className="search case"
-            onClick={() => handleFilter("desc")}
-            onKeyPress={(e) => handleFilterChange(e, "desc")}
-            tabIndex="0"
+            className='search case'
+            onClick={() => handleFilter('desc')}
+            onKeyPress={(e) => handleFilterChange(e, 'desc')}
+            tabIndex='0'
           >
             Highest priced
           </li>

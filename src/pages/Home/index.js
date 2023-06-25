@@ -49,7 +49,7 @@ const Home = () => {
     <PageDecorator subtitle='Home' headline='Collection'>
       <Filters handleFilter={handleResult} />
 
-      <div className='flex col quick'>
+      <div className='grid home gap provision'>
         {state.data.map((show) => (
           <Link
             key={show.id}

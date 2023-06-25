@@ -321,7 +321,7 @@ a:focus-visible {
 }
 
 .gap {
-  gap: var(--s-system);
+  gap: var(--s-medium);
 }
 
 .term {

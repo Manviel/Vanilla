@@ -7,6 +7,12 @@
   text-transform: capitalize;
 }
 
-.quick {
-  gap: var(--s-finger);
+.home {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
 }
