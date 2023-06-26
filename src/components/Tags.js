@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Tags = ({ tags = [] }) =>
-  tags.map((tag, index) => (
-    <span key={index} className='chip paper'>
-      {tag}
+  tags.map((tag) => (
+    <span key={tag.id} className='chip paper'>
+      {tag.label}
     </span>
   ));
 

@@ -51,11 +51,7 @@ const Home = () => {
 
       <div className='grid home gap provision'>
         {state.data.map((show) => (
-          <Link
-            key={show.id}
-            to={`/${show.id}`}
-            className='material view rounded'
-          >
+          <Link key={show.id} to={`/${show.id}`}>
             <ShowCard title={show.title} price={show.id} />
           </Link>
         ))}

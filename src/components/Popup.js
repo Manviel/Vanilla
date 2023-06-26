@@ -1,50 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { ActionTypes, Paths } from '../utils/models';
+
 import '../styles/popup.css';
 
 const Popup = ({ item }) => (
   <article className='flex col'>
     <section className='flex col info'>
-      <h3 className='name case day'>Information</h3>
+      <h3 className='name case day'></h3>
 
       <table>
+        <caption>Information</caption>
+        <thead class='material'>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
-            <th className='case'>Sizes</th>
-            <th className='case'>Color</th>
+            <td>Sizes</td>
+            <td>{item.name}</td>
           </tr>
           <tr>
-            <td className='name case'>{item.name}</td>
-            <td className='name case'>Black</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3 className='name case day'>Care</h3>
-
-      <table>
-        <tbody>
-          <tr>
-            <th className='case'>Wash care</th>
-            <th className='case'>Product code</th>
+            <td>Wash care</td>
+            <td>Machine wash</td>
           </tr>
           <tr>
-            <td className='name case'>Machine wash</td>
-            <td className='name case'>{item.postId}</td>
+            <td>Product code</td>
+            <td>{item.postId}</td>
+          </tr>
+          <tr>
+            <td>Author</td>
+            <td>{item.email}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>&#163; {item.id}</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <Link to='/home'>
-      <button className='flex space buy'>
-        <div className='flex'>
-          <span className='currency'>&#163;</span>
-          <h4 className='price'>{item.id}</h4>
-        </div>
-        <h5 className='case'>Pay with Touch ID</h5>
-      </button>
+    <Link to={Paths.Profile} className={ActionTypes.Contained}>
+      Pay with Touch ID
     </Link>
   </article>
 );

@@ -1,6 +1,5 @@
 .details {
-  margin-top: 1.6rem;
-  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .title {
@@ -8,12 +7,6 @@
   line-height: 1.2;
   letter-spacing: 0.05em;
   margin-bottom: 10px;
-}
-
-.info {
-  padding: 15px 10px;
-  justify-content: space-between;
-  background-color: var(--c-violet);
 }
 
 .name {
@@ -43,7 +36,7 @@
 
 @media screen and (max-width: 414px) {
   .details {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
 
   .hacking {

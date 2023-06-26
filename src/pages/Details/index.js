@@ -1,14 +1,27 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loader from '../../components/Loader';
-
-const Header = lazy(() => import('../../components/Header'));
-const Popup = lazy(() => import('../../components/Popup'));
-const Tags = lazy(() => import('../../components/Tags'));
-const MoreFrom = lazy(() => import('../../components/MoreFrom'));
+import PageDecorator from '../../components/PageDecorator';
+import Popup from '../../components/Popup';
+import Tags from '../../components/Tags';
+import MoreFrom from '../../components/MoreFrom';
 
 import './details.css';
+
+const TAGS = [
+  {
+    id: '2',
+    label: 'Black',
+  },
+  {
+    id: '3',
+    label: 'Tailored',
+  },
+  {
+    id: '4',
+    label: 'Layers',
+  },
+];
 
 const Details = () => {
   const [data, setData] = useState({});
@@ -22,38 +35,21 @@ const Details = () => {
   }, []);
 
   return (
-    <Suspense fallback={<Loader />}>
-      <Header />
+    <PageDecorator subtitle='Item' headline='Details'>
+      <Tags tags={TAGS} />
 
-      <Tags tags={['Black', 'Tailored', 'Layers']} />
-
-      <article className='flex details'>
+      <div className='grid gap details'>
         <Popup item={data} />
-
-        {data.id ? (
-          <div
-            style={{
-              backgroundColor: data.id % 2 === 0 ? '#2d2d2d' : '#FF385C',
-            }}
-            className='hacking'
-          >
-            <h6 className='case'>ABOUT ME</h6>
-
-            <p className='case'>{data.email}</p>
-          </div>
-        ) : (
-          <Loader />
-        )}
 
         <div>
           <strong className='case'>Description</strong>
 
           <p className='logo case'>{data.body}</p>
         </div>
-      </article>
+      </div>
 
       <MoreFrom />
-    </Suspense>
+    </PageDecorator>
   );
 };
 
