@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import PageDecorator from '../../components/PageDecorator';
 import Popup from '../../components/Popup';
 import Tags from '../../components/Tags';
 import MoreFrom from '../../components/MoreFrom';
+
+import { ActionTypes, Paths } from '../../utils/models';
 
 import './details.css';
 
@@ -21,6 +23,10 @@ const TAGS = [
     id: '4',
     label: 'Layers',
   },
+  {
+    id: '5',
+    label: 'Sale',
+  },
 ];
 
 const Details = () => {
@@ -36,16 +42,22 @@ const Details = () => {
 
   return (
     <PageDecorator subtitle='Item' headline='Details'>
-      <Tags tags={TAGS} />
+      <div className='grid brands gap'>
+        <Tags tags={TAGS} />
+      </div>
 
-      <div className='grid gap details'>
+      <div className='grid gap details screen'>
         <Popup item={data} />
 
-        <div>
-          <strong className='case'>Description</strong>
+        <article>
+          <h3 className='title'>Description</h3>
 
-          <p className='logo case'>{data.body}</p>
-        </div>
+          <p className='info'>{data.body}</p>
+
+          <Link to={Paths.Profile} className={ActionTypes.Contained}>
+            Pay with Touch ID
+          </Link>
+        </article>
       </div>
 
       <MoreFrom />

@@ -2,6 +2,8 @@ import React from 'react';
 
 import Tags from '../Tags';
 
+import { randomInRange } from '../../utils';
+
 import './albums.css';
 
 const TAGS = [
@@ -16,11 +18,20 @@ const ShowCard = ({ title, price }) => (
     <Tags tags={TAGS} />
 
     <h3 className='subtitle case card-measure'>{title}</h3>
-    <h4 className='info card-sub grey-dark'>Coats & jackets</h4>
 
-    <div className='flex justify-between items-center'>
-      <p className='chip'>&#163; {price}</p>
-    </div>
+    <section className='grid products'>
+      <div className='flex col ghost os'>
+        <p>Release year</p>
+
+        <strong className='subtitle'>{randomInRange(1980, 2023)}</strong>
+      </div>
+
+      <div className='flex col document os'>
+        <p>Price (in &#163;)</p>
+
+        <strong className='subtitle'>{price}</strong>
+      </div>
+    </section>
   </article>
 );
 

@@ -2,36 +2,8 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.title {
-  font-size: 2rem;
-  line-height: 1.2;
-  letter-spacing: 0.05em;
-  margin-bottom: 10px;
-}
-
-.name {
-  font-size: 1.2rem;
-  letter-spacing: 0.3em;
-  color: var(--c-light-primary);
-}
-
-.logo {
-  margin-top: 0.8rem;
-  max-width: 35rem;
-  width: 100%;
-  transition: 0.3s;
-}
-
-.hacking {
-  min-height: 30rem;
-  padding: 1.5rem 1rem;
-  color: var(--c-dark-primary);
-  margin: 4rem 1rem;
-  width: 40vw;
-}
-
-.logo:hover {
-  filter: contrast(0.8) brightness(1.15);
+.brands {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media screen and (max-width: 414px) {
@@ -39,7 +11,7 @@
     grid-template-columns: 1fr;
   }
 
-  .hacking {
-    width: 100%;
+  .brands {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

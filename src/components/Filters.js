@@ -25,7 +25,7 @@ const Filters = ({ handleFilter }) => {
       {open && (
         <ul className='filters'>
           <li
-            className='search case'
+            className='chip token case'
             onClick={() => handleFilter('date')}
             onKeyPress={(e) => handleFilterChange(e, 'date')}
             tabIndex='0'
@@ -33,7 +33,7 @@ const Filters = ({ handleFilter }) => {
             Latest
           </li>
           <li
-            className='search case'
+            className='chip token case'
             onClick={() => handleFilter('asc')}
             onKeyPress={(e) => handleFilterChange(e, 'asc')}
             tabIndex='0'
@@ -41,7 +41,7 @@ const Filters = ({ handleFilter }) => {
             Lowest priced
           </li>
           <li
-            className='search case'
+            className='chip token case'
             onClick={() => handleFilter('desc')}
             onKeyPress={(e) => handleFilterChange(e, 'desc')}
             tabIndex='0'

@@ -34,13 +34,12 @@ const Profile = () => {
   return (
     <PageDecorator subtitle='Profile' headline='Welcome back'>
       <article className='view material rounded'>
-        <h2 className='time accent'>
+        <h2 className='date card-sup'>
+          {days[time.getDay()]}, {time.getDate()} {months[time.getMonth()]}
+        </h2>
+        <h3 className='time accent'>
           {time.getHours()}:
           {time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes()}
-        </h2>
-
-        <h3 className='date card-sup'>
-          {days[time.getDay()]}, {time.getDate()} {months[time.getMonth()]}
         </h3>
       </article>
 

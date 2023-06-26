@@ -1,3 +1,7 @@
+:root {
+  --c-lavender: #eaddff;
+}
+
 .paper {
   background-color: var(--c-active);
   text-transform: uppercase;
@@ -9,6 +13,10 @@
 
 .home {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.document {
+  background-color: var(--c-lavender);
 }
 
 @media screen and (max-width: 768px) {

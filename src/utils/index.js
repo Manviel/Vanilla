@@ -1,13 +1,11 @@
 export const days = [
-  'For You',
+  'Sunday',
   'Monday',
   'Tuesday',
   'Wednesday',
   'Thursday',
   'Friday',
   'Saturday',
-  'Sunday',
-  'Recently Played',
 ];
 
 export const months = [
@@ -31,4 +29,14 @@ export const groupBy = (arr, prop) => {
   arr.forEach((obj) => map.get(obj[prop]).push(obj));
 
   return Array.from(map.values());
+};
+
+export const randomInRange = (min, max) => {
+  const byteArray = new Uint8Array(1);
+
+  window.crypto.getRandomValues(byteArray);
+
+  const range = max - min + 1;
+
+  return min + (byteArray[0] % range);
 };

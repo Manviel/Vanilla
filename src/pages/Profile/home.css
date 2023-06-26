@@ -1,12 +1,10 @@
 .time {
-  letter-spacing: -0.083705px;
-  font-size: 8rem;
+  font-size: 10rem;
 }
 
 .date {
   font-size: var(--s-dock);
   line-height: 1.5;
-  letter-spacing: 0.32px;
 }
 
 .accent {

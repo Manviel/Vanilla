@@ -1,28 +1,8 @@
-.slick-slider .slick-list {
-  padding: 0px !important;
-}
-
 .slide {
   height: 100%;
-  padding-right: 20px;
-  box-sizing: border-box;
+  padding-right: var(--s-medium);
 }
 
 .above {
-  height: 27px;
-  width: 55px;
-  justify-content: center;
-  align-items: center;
-}
-
-.above:hover {
-  background-color: #ffbbbb;
-}
-
-.next {
-  transform: rotate(-45deg);
-}
-
-.prev {
-  transform: rotate(135deg);
+  margin: var(--s-medium) 0;
 }
