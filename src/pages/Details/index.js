@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import PageDecorator from '../../components/PageDecorator';
 import Popup from '../../components/Popup';
 import Tags from '../../components/Tags';
-import MoreFrom from '../../components/MoreFrom';
+import MoreFrom from './MoreFrom';
 
 import { ActionTypes, Paths } from '../../utils/models';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ActionTypes } from '../utils/models';
+import { ActionTypes } from '../../utils/models';
 
 const Filters = ({ handleFilter }) => {
   const [open, setOpen] = useState(false);

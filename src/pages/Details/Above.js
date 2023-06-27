@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { PlayPrevIcon, PlayNextIcon } from '../assets/svg';
-import { ActionTypes } from '../utils/models';
+import { PlayPrevIcon, PlayNextIcon } from '../../assets/svg';
+import { ActionTypes } from '../../utils/models';
 
 const Above = ({ handleNext, handlePrev }) => (
   <nav

@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import ShowCard from './Card/ShowCard';
+import ShowCard from '../../components/Card/ShowCard';
 import Above from './Above';
 
 import '../styles/slider.css';
