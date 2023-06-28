@@ -1,34 +1,34 @@
 export const days = [
-  "For You",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-  "Recently Played"
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
 ];
 
 export const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 
-export const groupBy = (arr, prop) => {
-  const map = new Map(Array.from(arr, obj => [obj[prop], []]));
+export const randomInRange = (min, max) => {
+  const byteArray = new Uint8Array(1);
 
-  arr.forEach(obj => map.get(obj[prop]).push(obj));
+  window.crypto.getRandomValues(byteArray);
 
-  return Array.from(map.values());
+  const range = max - min + 1;
+
+  return min + (byteArray[0] % range);
 };

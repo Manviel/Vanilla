@@ -26,22 +26,20 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
+        test: /\.png/,
+        type: 'asset/resource',
       },
       {
-        test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+        test: /\.svg$/,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
+            loader: '@svgr/webpack',
           },
         ],
+        type: 'javascript/auto',
+        issuer: {
+          and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+        },
       },
     ],
   },

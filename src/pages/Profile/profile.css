@@ -1,0 +1,16 @@
+.time {
+  font-size: 10rem;
+}
+
+.date {
+  font-size: var(--s-dock);
+  line-height: 1.5;
+}
+
+.accent {
+  color: var(--c-energy);
+}
+
+.card-sup {
+  color: var(--c-alice);
+}

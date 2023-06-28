@@ -4,10 +4,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import ShowCard from './ShowCard';
+import ShowCard from '../../../components/Card/ShowCard';
 import Above from './Above';
 
-import '../styles/slider.css';
+import './slider.css';
 
 const MoreFrom = () => {
   const slider = useRef();
@@ -40,8 +40,10 @@ const MoreFrom = () => {
   };
 
   return (
-    <article className='container'>
-      <h3 className='title case'>More from Ratings & Reviews</h3>
+    <article className='screen'>
+      <h3 className='card-sub' id='candidate'>
+        Ratings
+      </h3>
 
       <Above handleNext={next} handlePrev={previous} />
 

@@ -1,0 +1,26 @@
+:root {
+  --c-lavender: #eaddff;
+}
+
+.paper {
+  background-color: var(--c-active);
+  text-transform: uppercase;
+}
+
+.case {
+  text-transform: capitalize;
+}
+
+.home {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.document {
+  background-color: var(--c-lavender);
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+}

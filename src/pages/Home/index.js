@@ -1,15 +1,16 @@
-import React, { lazy, useContext, useEffect, Suspense } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Loader from '../components/Loader';
+import PageDecorator from '../../components/PageDecorator';
+import ShowCard from '../../components/Card/ShowCard';
 
-import { DataContext } from '../utils/context';
+import { DataContext } from '../../utils/context';
 
-const Filters = lazy(() => import('../components/Filters'));
-const Header = lazy(() => import('../components/Header'));
-const ShowCard = lazy(() => import('../components/ShowCard'));
+import Filters, { OrderBy } from './Filters';
 
-const Landing = () => {
+const Home = () => {
+  const [query, setQuery] = useState(OrderBy.Asc);
+
   const { state, dispatch } = useContext(DataContext);
 
   useEffect(() => {
@@ -29,11 +30,11 @@ const Landing = () => {
   const sortByDefault = (first, last, key) => (first[key] > last[key] ? -1 : 0);
 
   const handleFilter = (query) => {
-    if (query === 'asc') {
+    if (query === OrderBy.Asc) {
       return state.data.sort((a, b) =>
         a.id > b.id ? 1 : sortByDefault(b, a, 'id')
       );
-    } else if (query === 'desc') {
+    } else if (query === OrderBy.Desc) {
       return state.data.sort((a, b) =>
         a.id < b.id ? 1 : reverseComparison(b, a)
       );
@@ -44,23 +45,25 @@ const Landing = () => {
     }
   };
 
-  const handleResult = (result) =>
+  const handleResult = (result) => {
+    setQuery(result);
+
     dispatch({ type: 'update', payload: handleFilter(result) });
+  };
 
   return (
-    <Suspense fallback={<Loader />}>
-      <Header />
-      <Filters handleFilter={handleResult} />
+    <PageDecorator subtitle='Home' headline='Collection'>
+      <Filters handleFilter={handleResult} query={query} />
 
-      <main className='flex container'>
+      <div className='grid home gap provision'>
         {state.data.map((show) => (
-          <Link key={show.id} to={`/${show.id}`} className='item'>
+          <Link key={show.id} to={`/${show.id}`}>
             <ShowCard title={show.title} price={show.id} />
           </Link>
         ))}
-      </main>
-    </Suspense>
+      </div>
+    </PageDecorator>
   );
 };
 
-export default Landing;
+export default Home;

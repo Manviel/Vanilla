@@ -1,0 +1,25 @@
+table {
+  border-collapse: collapse;
+  font-size: 1.6rem;
+  border: 1px solid var(--c-active);
+}
+
+th,
+td,
+caption {
+  padding: var(--s-system);
+  text-align: center;
+}
+
+caption {
+  background-color: var(--c-action);
+  border-radius: var(--s-unit) var(--s-unit) 0 0;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--c-active);
+}
+
+tbody tr:nth-child(even) {
+  background-color: transparent;
+}
