@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 
-import { SquareTextIcon, TextFinderIcon } from './assets/svg';
+import { SquareTextIcon, TextFinderIcon } from './assets/icons';
 
 import Loader from './components/Loader';
 

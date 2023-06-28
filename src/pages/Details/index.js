@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import PageDecorator from '../../components/PageDecorator';
-import Popup from '../../components/Popup';
 import Tags from '../../components/Tags';
-import MoreFrom from './MoreFrom';
 
 import { ActionTypes, Paths } from '../../utils/models';
+
+import MoreFrom from './SliderReview/MoreFrom';
+import InfoTable from './InfoTable';
 
 import './details.css';
 
@@ -47,7 +48,7 @@ const Details = () => {
       </div>
 
       <div className='grid gap details screen'>
-        <Popup item={data} />
+        <InfoTable item={data} />
 
         <article>
           <h3 className='title'>Description</h3>

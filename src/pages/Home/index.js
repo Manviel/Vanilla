@@ -2,10 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDecorator from '../../components/PageDecorator';
-import Filters from '../../components/Filters';
 import ShowCard from '../../components/Card/ShowCard';
 
 import { DataContext } from '../../utils/context';
+
+import Filters from './Filters';
 
 const Home = () => {
   const { state, dispatch } = useContext(DataContext);

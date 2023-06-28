@@ -1,8 +1,8 @@
 import React from 'react';
 
-import '../styles/popup.css';
+import './popup.css';
 
-const Popup = ({ item }) => (
+const InfoTable = ({ item }) => (
   <table>
     <caption>Information</caption>
     <thead className='material'>
@@ -36,4 +36,4 @@ const Popup = ({ item }) => (
   </table>
 );
 
-export default Popup;
+export default InfoTable;

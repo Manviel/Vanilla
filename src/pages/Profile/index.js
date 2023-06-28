@@ -8,7 +8,7 @@ import { days, months } from '../../utils';
 import { DataContext } from '../../utils/context';
 import { ActionTypes } from '../../utils/models';
 
-import { PlayIcon, PauseIcon } from '../../assets/svg';
+import { PlayIcon, PauseIcon } from '../../assets/icons';
 
 import './home.css';
 
