@@ -3,13 +3,11 @@
   --c-white: #fff;
   --c-dark: #000;
   --c-active: #2c2c2e;
-  --c-surface: #6e6e73;
   --c-primary: #f7f7f9;
   --c-action: #767676;
   --c-depth: rgba(29, 29, 31, 0.7);
   --c-ring: #0066cc;
   --c-grey: #a1a1a6;
-  --c-heat: #fa124f;
   --c-glass: rgba(37, 37, 37, 0.7);
   --c-ghost: #ebfff0;
   --c-show: #fce8e6;
@@ -179,31 +177,8 @@ a:focus-visible {
   padding: var(--s-safe) 1.6rem 2.4rem;
 }
 
-.layer {
-  background-color: var(--c-primary);
-}
-
-.card {
-  background-color: var(--c-white);
-}
-
-.connect {
-  display: inline-block;
-  color: var(--c-ring);
-  padding: 0.2rem;
-  font-size: 1.6rem;
-}
-
-.connect:hover {
-  text-decoration: underline;
-}
-
 .grey-dark {
   color: var(--c-grey);
-}
-
-.grey-light {
-  color: var(--c-surface);
 }
 
 .box {
@@ -256,17 +231,18 @@ a:focus-visible {
   background-color: transparent;
 }
 
-.superellipse:hover {
-  background-color: var(--c-active);
-}
-
 .superellipse.active {
-  background-color: var(--c-white);
+  background-color: var(--c-active);
   transform: scale(1.1);
 }
 
-.superellipse.inactive svg {
-  fill: var(--c-surface);
+.superellipse svg {
+  fill: var(--c-grey);
+}
+
+.superellipse:hover svg,
+.superellipse.active svg {
+  fill: var(--c-white);
 }
 
 .icon {

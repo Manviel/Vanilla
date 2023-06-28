@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, NavLink } from 'react-router-dom';
 
 import { SquareTextIcon, TextFinderIcon } from './assets/icons';
 
@@ -19,21 +19,21 @@ const App = () => (
       className='fixed-bottom dock depth content-full flex justify-between'
       aria-label='Tabs'
     >
-      <Link
+      <NavLink
         to={Paths.Home}
         aria-label='Home'
         className={ActionTypes.SuperEllipse}
       >
         <SquareTextIcon />
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to={Paths.Profile}
         aria-label='Profile'
         className={ActionTypes.SuperEllipse}
       >
         <TextFinderIcon />
-      </Link>
+      </NavLink>
     </nav>
 
     <Suspense fallback={<Loader />}>

@@ -3,7 +3,7 @@ import React from 'react';
 import './table.css';
 
 const InfoTable = ({ item }) => (
-  <table>
+  <table className='content-full'>
     <caption>Information</caption>
     <thead className='material'>
       <tr>

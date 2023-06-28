@@ -1,9 +1,35 @@
+:root {
+  --c-heat: #d70037;
+  --c-demo: #a36000;
+  --c-surface: #f6f9ff;
+}
+
 .details {
   grid-template-columns: repeat(2, 1fr);
 }
 
 .brands {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.activity {
+  color: var(--c-heat);
+}
+
+.alice {
+  background-color: var(--c-alice);
+}
+
+.demo {
+  color: var(--c-demo);
+}
+
+.layer {
+  background-color: var(--c-surface);
+}
+
+.outline {
+  color: var(--c-ring);
 }
 
 @media screen and (max-width: 414px) {

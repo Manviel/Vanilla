@@ -39,7 +39,7 @@ const Filters = ({ handleFilter, query }) => {
           <button
             key={tab.id}
             type='button'
-            className='filter-item flex content-full'
+            className='filter-item flex content-full justify-center'
             onClick={() => handleFilter(tab.id)}
             aria-pressed={query === tab.id}
           >
