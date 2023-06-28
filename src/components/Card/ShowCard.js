@@ -4,7 +4,7 @@ import Tags from '../Tags';
 
 import { randomInRange } from '../../utils';
 
-import './albums.css';
+import './card.css';
 
 const TAGS = [
   {
