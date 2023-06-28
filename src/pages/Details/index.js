@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import PageDecorator from '../../components/PageDecorator';
 import Tags from '../../components/Tags';
-
-import { ActionTypes, Paths } from '../../utils/models';
 
 import MoreFrom from './SliderReview/MoreFrom';
 import InfoTable from './InfoTable';
@@ -54,10 +52,6 @@ const Details = () => {
           <h3 className='title'>Description</h3>
 
           <p className='info'>{data.body}</p>
-
-          <Link to={Paths.Profile} className={ActionTypes.Contained}>
-            Pay with Touch ID
-          </Link>
         </article>
       </div>
 

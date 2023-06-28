@@ -23,10 +23,3 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: transparent;
 }
-
-.currency {
-  font-size: 2rem;
-  margin-right: 2px;
-  vertical-align: super;
-  align-self: flex-start;
-}

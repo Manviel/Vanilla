@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './popup.css';
+import './table.css';
 
 const InfoTable = ({ item }) => (
   <table>

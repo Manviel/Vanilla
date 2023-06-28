@@ -1,0 +1,28 @@
+.filters {
+  font-size: var(--s-system);
+  gap: 0.4rem;
+  background-color: var(--c-active);
+  padding: 0.4rem;
+  border-radius: var(--s-unit);
+}
+
+.filter-item {
+  padding: var(--s-unit) var(--s-safe);
+  font-size: inherit;
+  background-color: transparent;
+  border-radius: var(--s-unit);
+  font-weight: 500;
+  border: 1px solid transparent;
+  color: var(--c-primary);
+}
+
+.filter-item:hover {
+  background-color: var(--c-action);
+}
+
+.filter-item[aria-pressed='true'] {
+  background-color: var(--c-white);
+  font-weight: 600;
+  border: 1px solid var(--c-action);
+  color: var(--c-dark);
+}

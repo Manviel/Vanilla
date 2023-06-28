@@ -1,55 +1,52 @@
-import React, { useState } from 'react';
-import { ActionTypes } from '../../utils/models';
+import React from 'react';
 
-const Filters = ({ handleFilter }) => {
-  const [open, setOpen] = useState(false);
+import './filters.css';
 
-  const handleSubmit = () => setOpen(!open);
+export const OrderBy = {
+  Date: 'date',
+  Asc: 'asc',
+  Desc: 'desc',
+};
 
-  const handleFilterChange = (e, field) => {
-    if (e.which === 13) {
-      handleFilter(field);
-      handleSubmit();
-    }
-  };
+const TABS = [
+  {
+    id: OrderBy.Date,
+    label: 'Latest',
+  },
+  {
+    id: OrderBy.Asc,
+    label: 'Lowest',
+  },
+  {
+    id: OrderBy.Desc,
+    label: 'Highest',
+  },
+];
 
+const Filters = ({ handleFilter, query }) => {
   return (
     <>
-      <button
-        type='button'
-        className={ActionTypes.Secondary}
-        onClick={handleSubmit}
+      <p className='info grey-dark' id='sort-by'>
+        Sort Prices by
+      </p>
+
+      <div
+        className='filters flex items-center'
+        role='toolbar'
+        aria-labelledby='sort-by'
       >
-        Sort <i className={open ? 'arrow up' : 'arrow down'}></i>
-      </button>
-      {open && (
-        <ul className='filters'>
-          <li
-            className='chip token case'
-            onClick={() => handleFilter('date')}
-            onKeyPress={(e) => handleFilterChange(e, 'date')}
-            tabIndex='0'
+        {TABS.map((tab) => (
+          <button
+            key={tab.id}
+            type='button'
+            className='filter-item flex content-full'
+            onClick={() => handleFilter(tab.id)}
+            aria-pressed={query === tab.id}
           >
-            Latest
-          </li>
-          <li
-            className='chip token case'
-            onClick={() => handleFilter('asc')}
-            onKeyPress={(e) => handleFilterChange(e, 'asc')}
-            tabIndex='0'
-          >
-            Lowest priced
-          </li>
-          <li
-            className='chip token case'
-            onClick={() => handleFilter('desc')}
-            onKeyPress={(e) => handleFilterChange(e, 'desc')}
-            tabIndex='0'
-          >
-            Highest priced
-          </li>
-        </ul>
-      )}
+            {tab.label}
+          </button>
+        ))}
+      </div>
     </>
   );
 };

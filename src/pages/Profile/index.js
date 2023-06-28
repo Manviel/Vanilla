@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import CookieConsent from 'react-cookie-consent';
+import CookieConsent, {
+  getCookieConsentValue,
+  resetCookieConsentValue,
+} from 'react-cookie-consent';
 
 import PageDecorator from '../../components/PageDecorator';
 
@@ -10,7 +12,7 @@ import { ActionTypes } from '../../utils/models';
 
 import { PlayIcon, PauseIcon } from '../../assets/icons';
 
-import './home.css';
+import './profile.css';
 
 const Profile = () => {
   const [time, setTime] = useState(new Date());
@@ -44,7 +46,7 @@ const Profile = () => {
       </article>
 
       <section className='view material rounded screen'>
-        <div className='flex col gap items-center'>
+        <div className='flex justify-between items-center'>
           <button
             type='button'
             className={ActionTypes.SuperEllipse}
@@ -54,31 +56,20 @@ const Profile = () => {
             {isAuth ? <PauseIcon /> : <PlayIcon />}
           </button>
 
-          <Link to='/' className={ActionTypes.Contained}>
-            Go to the Store
-          </Link>
+          <p className='term grey-dark'>{isAuth ? 'Unlock' : 'Lock'}</p>
+
+          <button
+            disabled={!getCookieConsentValue()}
+            type='button'
+            className={ActionTypes.Contained}
+            onClick={() => resetCookieConsentValue()}
+          >
+            Reset consent
+          </button>
         </div>
       </section>
 
-      <CookieConsent
-        location='bottom'
-        buttonText='Close'
-        style={{
-          background: '#aeffc5',
-          color: '#000',
-          textTransform: 'uppercase',
-          lineHeight: '1.7em',
-          flexDirection: 'column',
-        }}
-        buttonStyle={{
-          background: '#303030',
-          color: '#fff',
-          fontSize: '10px',
-          textTransform: 'uppercase',
-          padding: '1.2em',
-        }}
-        expires={150}
-      >
+      <CookieConsent location='bottom' buttonText='Close' expires={150}>
         Cookie use
         <br />
         This website uses cookies to enhance the user experience. If you
